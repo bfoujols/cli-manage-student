@@ -1,0 +1,17 @@
+{
+    "name": "redbull/cli-manage-student",
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Benoit Foujols",
+            "email": "benoit@foujols.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^6.0"
+    }
+}
