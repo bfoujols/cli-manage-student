@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\Core;
+namespace ManageStudent\Core;
 
 use DateTime;
 use DateTimeZone;
@@ -16,7 +16,6 @@ trait CommandOption
 
     /**
      * Banner of the command
-     * http://patorjk.com/software/taag/#p=display&f=Digital&t=CRAWL%20YOOBIKE
      * @return string
      * @throws \Exception
      * @var $text string Add text in banner
@@ -48,8 +47,8 @@ trait CommandOption
     private function setEnd(): ?String
     {
         $banner = "\n<info>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</info>\n";
-        $banner .= "<comment>Command launched : </comment>" . $this->commandName . "\n";
-        $banner .= "<comment>Version : </comment>" . $this->commandVersion . "\n";
+        $banner .= "<comment>Command launched : </comment> \n";
+        $banner .= "<comment>Version : </comment> \n";
         $banner .= "<comment>Running time : </comment>" . $this->execTime() . "\n";
         $banner .= "<info>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</info>\n";
 
@@ -72,8 +71,8 @@ trait CommandOption
         if ($diffMicro > 1) {
             $ms = explode(".", $diffMicro);
             return $dateDiff->format("%H:%I:%S") . "(" . substr($ms[1], 0, 3) . "ms)";
-        } else {
-            return round($diffMicro, 2) . " ms.";
         }
+
+        return round($diffMicro, 2) . " ms.";
     }
 }

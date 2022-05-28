@@ -1,17 +1,24 @@
 {
-    "name": "redbull/cli-manage-student",
+    "name": "bfoujols/manage-student",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "app\\": "src/"
+            "ManageStudent\\": "src/"
         }
     },
     "authors": [
         {
             "name": "Benoit Foujols",
-            "email": "benoit@foujols.com"
+            "email": "Benoit.Foujols@ac-creteil.fr"
         }
     ],
     "require": {
+        "php": ">=7.4",
         "symfony/console": "^6.0"
     }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "bin": ["bin/mstud"]
 }
