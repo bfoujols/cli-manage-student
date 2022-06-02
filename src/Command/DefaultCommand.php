@@ -8,18 +8,23 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class CreateStudentCommand extends Command
+class DefaultCommand extends Command
 {
     use CommandOption;
 
-    protected static $defaultName = 'student:create';
+    protected static $defaultName = 'default';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
+        $io->writeln($this->setBanner());
         $io->writeln([
-            'Test Student::create',
+            'Bonjour !',
         ]);
+        $io->writeln([
+            'Pour voir toutes les commandes, run: mstud list',
+        ]);
+
 
 
         return Command::SUCCESS;
