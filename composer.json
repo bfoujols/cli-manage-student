@@ -16,7 +16,8 @@
         "php": ">=7.4",
         "symfony/console": "^6.0",
         "symfony/filesystem": "^6.0",
-        "symfony/finder": "^6.0"
+        "symfony/finder": "^6.0",
+        "shuchkin/simplexlsx": "^1.0"
     }
     ,
     "require-dev": {
