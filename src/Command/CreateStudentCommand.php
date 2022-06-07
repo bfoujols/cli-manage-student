@@ -16,7 +16,7 @@ class CreateStudentCommand extends Command
 {
     use CommandBanner;
 
-    protected static $defaultName = 'student:create';
+    protected static $defaultName = 'student:dir';
     protected static $defaultDescription = 'Création des repertoires des étudiants';
 
     protected function configure(): void
@@ -29,7 +29,8 @@ class CreateStudentCommand extends Command
     {
 
         $io = new SymfonyStyle($input, $output);
-        $io->writeln($this->setBanner("Command: Student::create"));
+        $io->writeln($this->setBanner("Command: " . self::$defaultName));
+
 
         $fileSelect = new FileSelector($input, $output);
         FileSource::setFileSource($fileSelect->getFile($input->getArgument('path')));
