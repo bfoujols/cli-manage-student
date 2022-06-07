@@ -7,6 +7,12 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 
+/**
+ * Class QuestionType
+ * Gestion des questions via console
+ *
+ * @author Benoit Foujols
+ */
 class QuestionType extends QuestionHelper
 {
     private $input;
@@ -19,6 +25,8 @@ class QuestionType extends QuestionHelper
     }
 
     /**
+     * Gestion des questions à choix multiple
+     *
      * @param string $nameQuestion
      * @param array $choiseQuestion
      * @param string $messageError

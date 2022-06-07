@@ -31,6 +31,7 @@ class CreateStudentCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->writeln($this->setBanner("Command: " . self::$defaultName));
 
+
         $fileSelect = new FileSelector($input, $output);
         FileSource::setFileSource($fileSelect->getFile($input->getArgument('path')));
 
