@@ -5,7 +5,7 @@ A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches co
 
 ## Features
 
-![CHANGELOG](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+[CHANGELOG](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
 
 * Commande "student:dir" : Creation des répertoires (alias dir) de chaque étudiant dans l'arborescence
 * Mise en place d'une nomenclature nom-prenom-datenaissance(aaaammjj) pour éviter les problemes homonyme
@@ -17,6 +17,12 @@ Pour savoir la liste des commandes disponibles :
 ```
 # php manage-student.phar list
 ```
+
+### Prerequis
+| Version | Service                                                             | DESCRIPTION                      |
+|:--------|:--------------------------------------------------------------------|:---------------------------------|
+| ^7.4    | PHP Engine                                                          |                                  |  
+| ^2.0    | Composer Dependency Manager                                         |                                  |
 
 
 ## Develop
