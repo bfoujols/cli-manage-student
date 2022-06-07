@@ -1,12 +1,12 @@
 <?php
 
 
-namespace ManageStudent\Core;
+namespace ManageStudent\Service;
 
 use DateTime;
 use DateTimeZone;
 
-trait CommandOption
+trait CommandBanner
 {
     /**
      * @var DateTime
@@ -20,7 +20,7 @@ trait CommandOption
      * @throws \Exception
      * @var $text string Add text in banner
      */
-    private function setBanner(): ?String
+    private function setBanner(): ?string
     {
         $date = new \DateTime("now", new DateTimeZone("Europe/Paris"));
         $this->timeExecStart = $date;
@@ -41,7 +41,7 @@ trait CommandOption
      * @return String|null
      * @throws \Exception
      */
-    private function setEnd(): ?String
+    private function setEnd(): ?string
     {
         $banner = "\n<info>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</info>\n";
         $banner .= "<comment>Command launched : </comment> \n";
@@ -57,7 +57,7 @@ trait CommandOption
      * @return String|null
      * @throws \Exception
      */
-    private function execTime(): ?String
+    private function execTime(): ?string
     {
         // Calcul Seconde
         $dateEnd = new \DateTime("now", new DateTimeZone($_ENV['TIMEZONE']));

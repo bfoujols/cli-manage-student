@@ -2,7 +2,7 @@
 
 namespace ManageStudent\Command;
 
-use ManageStudent\Core\CommandOption;
+use ManageStudent\Service\CommandBanner;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -10,7 +10,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class DefaultCommand extends Command
 {
-    use CommandOption;
+    use CommandBanner;
 
     protected static $defaultName = 'default';
 
