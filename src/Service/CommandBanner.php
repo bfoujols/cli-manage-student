@@ -1,12 +1,18 @@
 <?php
 
 
-namespace ManageStudent\Core;
+namespace ManageStudent\Service;
 
 use DateTime;
 use DateTimeZone;
 
-trait CommandOption
+/**
+ * Trait CommandBanner
+ * Gestion de la banniere de loader
+ *
+ * @author Benoit Foujols
+ */
+trait CommandBanner
 {
     /**
      * @var DateTime
@@ -16,35 +22,36 @@ trait CommandOption
 
     /**
      * Banner of the command
+     *
      * @return string
      * @throws \Exception
-     * @var $text string Add text in banner
+     * @var $message string Add text in banner
      */
-    private function setBanner(): ?String
+    private function setBanner($message): ?string
     {
         $date = new \DateTime("now", new DateTimeZone("Europe/Paris"));
         $this->timeExecStart = $date;
         $this->timeExecStartMicro = microtime(true);
 
-        $banner = "<info>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
-
-        $banner .= "    __  ___                                _____ __            __    \n";
-        $banner .= "   /  |/  /___ _____  ____ _____ ____     / ___// /___  ______/ /     \n";
-        $banner .= "  / /|_/ / __ `/ __ \/ __ `/ __ `/ _ \    \__ \/ __/ / / / __  /      \n";
-        $banner .= " / /  / / /_/ / / / / /_/ / /_/ /  __/   ___/ / /_/ /_/ / /_/ /       \n";
-        $banner .= "/_/  /_/\__,_/_/ /_/\__,_/\__, /\___/   /____/\__/\__,_/\__,_/        \n";
-        $banner .= "                         /____/ </info><comment>by Benoit Foujols v1.0.0</comment>\n";
-        $banner .= "<info>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</info>\n";
+        $banner = "<info>";
+        $banner .= " __  __                           ___ _           _             \n";
+        $banner .= "|  \/  |__ _ _ _  __ _ __ _ ___  / __| |_ _  _ __| |            \n";
+        $banner .= "| |\/| / _` | ' \/ _` / _` / -_) \__ \  _| || / _` |            \n";
+        $banner .= "|_|  |_\__,_|_||_\__,_\__, \___| |___/\__|\_,_\__,_|            \n";
+        $banner .= "                      |___/ </info><comment>v1.0.0</comment>    \n";
+        $banner .= "\n";
+        $banner .= $message . "\n";
 
         return $banner;
     }
 
     /**
      * Footer of the command
+     *
      * @return String|null
      * @throws \Exception
      */
-    private function setEnd(): ?String
+    private function setEnd(): ?string
     {
         $banner = "\n<info>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</info>\n";
         $banner .= "<comment>Command launched : </comment> \n";
@@ -57,10 +64,11 @@ trait CommandOption
 
     /**
      * Calculate Exec Time Command
+     *
      * @return String|null
      * @throws \Exception
      */
-    private function execTime(): ?String
+    private function execTime(): ?string
     {
         // Calcul Seconde
         $dateEnd = new \DateTime("now", new DateTimeZone($_ENV['TIMEZONE']));
