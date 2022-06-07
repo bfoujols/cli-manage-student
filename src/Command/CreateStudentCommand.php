@@ -3,7 +3,9 @@
 namespace ManageStudent\Command;
 
 use ManageStudent\Service\CommandBanner;
-use ManageStudent\Service\FileSelect;
+use ManageStudent\Service\FileLoader;
+use ManageStudent\Service\FileSelector;
+use ManageStudent\Service\FileSource;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -14,7 +16,7 @@ class CreateStudentCommand extends Command
 {
     use CommandBanner;
 
-    protected static $defaultName = 'student:create';
+    protected static $defaultName = 'student:dir';
     protected static $defaultDescription = 'Création des repertoires des étudiants';
 
     protected function configure(): void
@@ -27,16 +29,13 @@ class CreateStudentCommand extends Command
     {
 
         $io = new SymfonyStyle($input, $output);
-        $io->writeln($this->setBanner());
-        $io->writeln([
-            '',
-            'Command: Student::create',
-        ]);
+        $io->writeln($this->setBanner("Command: " . self::$defaultName));
 
-        $fileSelect = new FileSelect($input, $output);
-        $fileSelected = $fileSelect->getFilePath($input->getArgument('path'));
+        $fileSelect = new FileSelector($input, $output);
+        FileSource::setFileSource($fileSelect->getFile($input->getArgument('path')));
 
-
+        $result = FileLoader::execute();
+        print_r($result);
 
         return Command::SUCCESS;
     }
