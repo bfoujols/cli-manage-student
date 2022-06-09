@@ -36,6 +36,7 @@ class CreateStudentCommand extends Command
         FileSource::setFileSource($fileSelect->getFile($input->getArgument('path')));
 
         $result = FileLoader::execute();
+        // TODO faire la commande de creation DIR
         print_r($result);
 
         return Command::SUCCESS;

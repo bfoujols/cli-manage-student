@@ -18,6 +18,7 @@ class FileTypeXLSX implements FileTypeInterface
         if ($xlsx = SimpleXLSX::parse(FileSource::getFilePath())) {
             return $xlsx->rows();
         } else {
+            // Todo gestion des errors
             // SimpleXLSX::parseError();
         }
     }

@@ -1,24 +1,28 @@
-```
-    __  ___                                _____ __            __
-   /  |/  /___ _____  ____ _____ ____     / ___// /___  ______/ /
-  / /|_/ / __ `/ __ \/ __ `/ __ `/ _ \    \__ \/ __/ / / / __  / 
- / /  / / /_/ / / / / /_/ / /_/ /  __/   ___/ / /_/ /_/ / /_/ /  
-/_/  /_/\__,_/_/ /_/\__,_/\__, /\___/   /____/\__/\__,_/\__,_/   
-                         /____/                                  
-```
 # Manage Student Cli
+
+Création d'un invité de commande pour faciliter la gestion des étudiants. 
+A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches comme la création des dossiers d'étudiant ou d'autres fichiers template (comme la création des fiches d'examen)
 
 ## Features
 
-* Creation des repertoires par étudiant via un source XLS
-* Source fichier CSV ou export 'Ecole directe'
+[CHANGELOG](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+
+* Commande "student:dir" : Creation des répertoires (alias dir) de chaque étudiant dans l'arborescence
+* Mise en place d'une nomenclature nom-prenom-datenaissance(aaaammjj) pour éviter les problemes homonyme
+* Importation des étudiants à partir d'un template au format XLSX
 
 ## Basic Usage
 
 Pour savoir la liste des commandes disponibles :
 ```
-# php manage-student.phar
+# php manage-student.phar list
 ```
+
+### Prerequis
+| Version | Service                                                             | DESCRIPTION                      |
+|:--------|:--------------------------------------------------------------------|:---------------------------------|
+| ^7.4    | PHP Engine                                                          |                                  |  
+| ^2.0    | Composer Dependency Manager                                         |                                  |
 
 
 ## Develop

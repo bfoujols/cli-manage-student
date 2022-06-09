@@ -4,4 +4,6 @@
 ### App
 vendor/**
 
+### Testing
+tests/result/**
 

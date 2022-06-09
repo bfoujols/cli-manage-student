@@ -11,6 +11,8 @@ use Symfony\Component\Finder\SplFileInfo;
  */
 class FileLoader
 {
+    private static $FileModelSelect;
+
     /**
      * Execution du loader pour charger la class du bon format
      *
@@ -18,9 +20,18 @@ class FileLoader
      */
     public static function execute(): array
     {
-        $classLoader = 'ManageStudent\Service\FileType\FileType'.FileSource::getFileExtension();
-        $exe = new $classLoader();
-        return $exe->getContent();
+        $FileTypeLoader = 'ManageStudent\Service\FileType\FileType'.FileSource::getFileExtension();
+        $exeFileType = new $FileTypeLoader();
+
+        $FileModelLoader = 'ManageStudent\Service\FileModel\FileModelLoad'.FileSource::getFileExtension();
+        $exeFileModel = new $FileModelLoader();
+        foreach ($exeFileModel->getListFileModel() as $FileModel) {
+           if ($FileModel::analyse($exeFileType->getContent()) === true) {
+               self::$FileModelSelect = $FileModel;
+               break;
+           }
+        }
+        return self::$FileModelSelect::getStudents();
     }
 
 }
