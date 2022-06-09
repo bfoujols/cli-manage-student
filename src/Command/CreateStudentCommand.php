@@ -2,10 +2,13 @@
 
 namespace ManageStudent\Command;
 
+use ManageStudent\Entity\Student;
 use ManageStudent\Service\CommandBanner;
+use ManageStudent\Service\DirService;
 use ManageStudent\Service\FileLoader;
 use ManageStudent\Service\FileSelector;
 use ManageStudent\Service\FileSource;
+use ManageStudent\Service\NomanclatureService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -27,17 +30,21 @@ class CreateStudentCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-
         $io = new SymfonyStyle($input, $output);
         $io->writeln($this->setBanner("Command: " . self::$defaultName));
-
 
         $fileSelect = new FileSelector($input, $output);
         FileSource::setFileSource($fileSelect->getFile($input->getArgument('path')));
 
-        $result = FileLoader::execute();
-        // TODO faire la commande de creation DIR
-        print_r($result);
+        foreach (FileLoader::execute() as $student)
+        {
+            if ($student instanceof Student) {
+                $nameDir = new NomanclatureService();
+                $newDir = new DirService();
+                ($newDir->createDir($nameDir->getNameWithoutType($student)) === true) ? $affiche = "Creation du repertoire " : $affiche = "Repertoire deja existant ";
+                print_r($affiche . $nameDir->getNameWithoutType($student)."\n");
+            }
+        }
 
         return Command::SUCCESS;
     }

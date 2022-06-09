@@ -2,7 +2,7 @@
 
 namespace ManageStudent\Entity;
 
-class Student
+class Student extends \DateTime
 {
     private string $nom;
     private string $prenom;
