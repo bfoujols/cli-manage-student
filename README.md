@@ -15,7 +15,7 @@ A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches co
 
 Pour savoir la liste des commandes disponibles :
 ```
-# php manage-student.phar list
+# php mstud.phar list
 ```
 
 ### Prerequis
