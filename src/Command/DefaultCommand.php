@@ -11,23 +11,21 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class DefaultCommand extends Command
 {
-    use CommandBanner;
-
     protected static $defaultName = 'default';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $io = new SymfonyStyle($input, $output);
-        $io->writeln($this->setBanner("Command: " . self::$defaultName));
-        $io->writeln([
+        $render = new SymfonyStyle($input, $output);
+        $render->writeln(CommandBanner::getBanner());
+        $render->writeln([
             'Bienvenu dans la console Manage Student !',
             ''
         ]);
 
-        $check = new CkeckStack($output, $io);
+        $check = new CkeckStack($output,  $render);
         $check->render();
 
-        $io->writeln([
+        $render->writeln([
             'Pour voir toutes les commandes, run: mstud list',
             ''
         ]);

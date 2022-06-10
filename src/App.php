@@ -1,6 +1,7 @@
 <?php
 namespace ManageStudent;
 
+use ManageStudent\Service\CommandBanner;
 use Symfony\Component\Console\Application;
 
 class App extends Application
@@ -12,6 +13,7 @@ class App extends Application
         $this->add(new \ManageStudent\Command\DefaultCommand());
         $this->add(new \ManageStudent\Command\CreateStudentCommand());
 
+        CommandBanner::setVersion($this->getVersion());
 
         $this->setDefaultCommand('default');
     }
