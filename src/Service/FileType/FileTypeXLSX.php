@@ -24,8 +24,7 @@ class FileTypeXLSX implements FileTypeInterface
                 throw new Exception(SimpleXLSX::parseError());
             }
         } catch (\Exception $exception) {
-            echo "Une erreur s'est produite lors de la lecture de votre fichier : " . $exception->getMessage();
+            echo "Une erreur s'est produite lors de la lecture de votre fichier";
         }
-
     }
 }
