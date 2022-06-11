@@ -7,7 +7,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Trait CommandBanner
+ * Class CommandBanner
  * Gestion de la banniere de loader
  *
  * @author Benoit Foujols
@@ -71,14 +71,14 @@ class CommandBanner
     private static function execTime(): ?string
     {
         // Calcul Seconde
-        $dateEnd = new \DateTime("now", new DateTimeZone($_ENV['TIMEZONE']));
+        $dateEnd = new \DateTime("now", new DateTimeZone('Europe/Paris'));
         $dateDiff = self::$timeExecStart->diff($dateEnd);
         // Calcul MS
         $diffMicro = microtime(true) - self::$timeExecStartMicro;
 
         if ($diffMicro > 1) {
-            $ms = explode(".", $diffMicro);
-            return $dateDiff->format("%H:%I:%S") . "(" . substr($ms[1], 0, 3) . "ms)";
+            $microSec = explode(".", $diffMicro);
+            return $dateDiff->format("%H:%I:%S") . "(" . substr($microSec[1], 0, 3) . "ms)";
         }
 
         return round($diffMicro, 2) . " ms.";

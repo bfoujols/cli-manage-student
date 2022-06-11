@@ -4,17 +4,36 @@ namespace ManageStudent\Service;
 
 use ManageStudent\Entity\Student;
 
+/**
+ * Class NomanclatureService
+ * Gestion de la nomanclature des fichiers et dossiers
+ *
+ * @author Benoit Foujols
+ */
 class NomanclatureService
 {
+    /**
+     * Nommage des repertoires
+     *
+     * @param Student $student
+     * @return string
+     */
     public function getNameWithoutType(Student $student): string
     {
-        return StandardRaw::normalizeSRString($student->getNom())
+        $clean = new StandardRaw();
+        return $clean->normalizeSRString($student->getNom())
             . "-" .
-            StandardRaw::normalizeSRSUcfirst($student->getPrenom())
+            $clean->normalizeSRSUcfirst($student->getPrenom())
             . "-" .
             $this->getDateToString($student->getDateNaissance());
     }
 
+    /**
+     * Format des la date dans la nomenclature
+     *
+     * @param \DateTime $dateTime
+     * @return string
+     */
     public function getDateToString(\DateTime $dateTime): string
     {
         return $dateTime->format('ymd');

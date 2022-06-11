@@ -37,9 +37,9 @@ class FinderType
         $this->finder->files()->name(FileExtension::getListExtensionByName())->in($this->pathCurrent);
         if ($this->finder->hasResults()) {
             foreach ($this->finder as $file) {
-                $id = hash(self::HASH_TYPE, $file->getRealPath());
-                $this->listSplFileInfo[$id] = $file;
-                $this->listFilename[$id] = $file->getFilename();
+                $idHash = hash(self::HASH_TYPE, $file->getRealPath());
+                $this->listSplFileInfo[$idHash] = $file;
+                $this->listFilename[$idHash] = $file->getFilename();
             }
         }
         return $this->listFilename;
