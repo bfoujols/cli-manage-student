@@ -16,9 +16,9 @@ class StandardRaw
      * @param String $raw
      * @return String|null
      */
-    public static function normalizeSRString(String $raw): ?String
+    public function normalizeSRString(String $raw): ?String
     {
-        return strtoupper((new StandardRaw)->clean($raw));
+        return strtoupper($this->clean($raw));
     }
 
     /**
@@ -27,9 +27,9 @@ class StandardRaw
      * @param String $raw
      * @return String|null
      */
-    public static function normalizeSRSUcfirst(String $raw): ?String
+    public function normalizeSRSUcfirst(String $raw): ?String
     {
-        return ucfirst((new StandardRaw)->clean($raw));
+        return ucfirst($this->clean($raw));
     }
 
 
@@ -39,9 +39,9 @@ class StandardRaw
      * @param String $raw
      * @return String|null
      */
-    public static function normalizeSRUtf8(String $raw): ?String
+    public function normalizeSRUtf8(String $raw): ?String
     {
-        return (new StandardRaw)->clean($raw);
+        return $this->clean($raw);
     }
 
     /**

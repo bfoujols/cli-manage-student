@@ -6,6 +6,12 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class CheckStack
+ * Gestion des prerequis
+ *
+ * @author Benoit Foujols
+ */
 class CkeckStack
 {
     private $output;
@@ -17,6 +23,11 @@ class CkeckStack
         $this->symfonyStyle = $symfonyStyle;
     }
 
+    /**
+     * Rendu des prérequis dans le terminal
+     *
+     * @return void
+     */
     public function render()
     {
         $this->symfonyStyle->writeln([
@@ -33,6 +44,11 @@ class CkeckStack
         ]);
     }
 
+    /**
+     * Execution des tests de prerequis
+     *
+     * @return array
+     */
     private function run(): array
     {
         $listCheck = [];

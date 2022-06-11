@@ -2,6 +2,7 @@
 
 namespace ManageStudent\Service\FileType;
 
+use Exception;
 use ManageStudent\Service\FileSource;
 use Shuchkin\SimpleXLSX;
 
@@ -15,11 +16,15 @@ class FileTypeXLSX implements FileTypeInterface
 {
     public function getContent(): array
     {
-        if ($xlsx = SimpleXLSX::parse(FileSource::getFilePath())) {
-            return $xlsx->rows();
-        } else {
-            // Todo gestion des errors
-            // SimpleXLSX::parseError();
+        try {
+            if ($xlsx = SimpleXLSX::parse(FileSource::getFilePath())) {
+                return $xlsx->rows();
+            } else {
+                // Todo gestion des errors MITRE, CWE-397 - Declaration of Throws for Generic Exception
+                throw new Exception(SimpleXLSX::parseError());
+            }
+        } catch (\Exception $exception) {
+            echo "Une erreur s'est produite lors de la lecture de votre fichier";
         }
     }
 }
