@@ -16,4 +16,4 @@ jobs:
         with:
           bootstrap: vendor/autoload.php
           configuration: test/phpunit.xml
-          php_version: "7.4"
+          php_version: "8.1"

@@ -1,6 +1,7 @@
 # Manage Student Cli
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/df1ed0cf2b5a46e68a822e674ca8e671)](https://www.codacy.com/gh/bfoujols/manage-student-cli/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bfoujols/manage-student-cli&amp;utm_campaign=Badge_Grade)
 ![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/codacy.yml/badge.svg)
+![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing.yml/badge.svg)
 
 Création d'un invité de commande pour faciliter la gestion des étudiants. 
 A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches comme la création des dossiers d'étudiant ou d'autres fichiers template (comme la création des fiches d'examen)
