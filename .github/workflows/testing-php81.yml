@@ -1,4 +1,4 @@
-name: Testing
+name: Testing PHP 8.1
 
 on: [ push ]
 
@@ -15,5 +15,5 @@ jobs:
         uses: php-actions/phpunit@v3
         with:
           bootstrap: vendor/autoload.php
-          configuration: test/phpunit.xml
+          configuration: phpunit.xml
           php_version: "8.1"
