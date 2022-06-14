@@ -6,4 +6,5 @@ vendor/**
 
 ### Testing
 tests/result/**
+.phpunit.result.cache
 
