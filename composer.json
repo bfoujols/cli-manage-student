@@ -1,5 +1,5 @@
 {
-    "name": "bfoujols/manage-student",
+    "name": "bfoujols/mstud",
     "license": "MIT",
     "autoload": {
         "psr-4": {

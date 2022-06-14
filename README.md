@@ -24,22 +24,29 @@ Pour savoir la liste des commandes disponibles :
 ```
 
 ### Prerequis
+
 | Version | Service                                                             |
 |:--------|:--------------------------------------------------------------------|
 | ^7.4    | PHP Engine                                                          | 
 | ^2.0    | Composer Dependency Manager                                         |
 
+## Testing
+
+```
+php vendor/bin/phpunit --testdox  tests
+```
 
 ## Develop
 
 Package du projet via une archive .phar via clue/phar-composer
+
 ``` shell
 # curl -JOL https://clue.engineering/phar-composer-latest.phar
 # git clone git@github.com:bfoujols/cli-manage-student.git
 # composer install --no-dev
 # php -d phar.readonly=off phar-composer.phar build cli-manage-student
-[1/1] Creating phar manage-student.phar
-  - Adding main package "bfoujols/manage-student"
+[1/1] Creating phar mstud.phar
+  - Adding main package "bfoujols/mstud"
   - Adding composer base files
   - Adding dependency "psr/container" from "vendor/psr/container/"
   - Adding dependency "roave/security-advisories" from "vendor/roave/security-advisories/"
@@ -54,8 +61,8 @@ Package du projet via une archive .phar via clue/phar-composer
     Using referenced shebang "#!/usr/bin/env php"
     Using referenced chmod 0644
     Applying chmod 0644
-    OK - Creating manage-student.phar (1091.6 KiB) completed after 0.1s
-# php manage-student.phar --version
+    OK - Creating mstud.phar (1091.6 KiB) completed after 0.1s
+# php mstud.phar --version
   Manage Student CLI <<version>>
 ```
 
