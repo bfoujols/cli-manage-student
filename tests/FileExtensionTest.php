@@ -21,7 +21,7 @@ final class FileExtensionTest extends TestCase
     {
         $listExtension = \ManageStudent\Service\FileExtension::getListExtensionByName();
                 $this->assertSame(
-                        '*.XLSX',
+                        '*.xlsx',
                         $listExtension[0]
         );
     }
