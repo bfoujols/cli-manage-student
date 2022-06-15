@@ -1,5 +1,7 @@
 <?php
 
+namespace Service;
+
 use PHPUnit\Framework\TestCase;
 
 final class FileExtensionTest extends TestCase
@@ -7,7 +9,7 @@ final class FileExtensionTest extends TestCase
     /**
      * @test FileExt01
      */
-    public function testIsArray() : void
+    public function testIsArray(): void
     {
         $this->assertIsArray(
             \ManageStudent\Service\FileExtension::getListExtensionByName()
@@ -17,12 +19,12 @@ final class FileExtensionTest extends TestCase
     /**
      * @test FileExt02
      */
-    public  function  testArrayTypeXlsx() : void
+    public function testArrayTypeXlsx(): void
     {
         $listExtension = \ManageStudent\Service\FileExtension::getListExtensionByName();
-                $this->assertSame(
-                        '*.xlsx',
-                        $listExtension[0]
+        $this->assertSame(
+            '*.xlsx',
+            $listExtension[0]
         );
     }
 }
