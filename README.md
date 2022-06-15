@@ -33,21 +33,34 @@ Pour savoir la liste des commandes disponibles :
 | ^7.4    | PHP Engine                                                          | 
 | ^2.0    | Composer Dependency Manager                                         |
 
+## Develop
+
+Voici la procedure pour dev
+
+```
+$ git clone git@github.com:bfoujols/cli-manage-student.git
+$ cd cli-manage-student
+$ composer install
+$ php bin/mstud 
+```
+
 ## Testing
 
 ```
 php vendor/bin/phpunit --testdox  tests
 ```
 
-## Develop
+## Package
 
 Package du projet via une archive .phar via clue/phar-composer
 
 ``` shell
-# curl -JOL https://clue.engineering/phar-composer-latest.phar
-# git clone git@github.com:bfoujols/cli-manage-student.git
-# composer install --no-dev
-# php -d phar.readonly=off phar-composer.phar build cli-manage-student
+$ curl -JOL https://clue.engineering/phar-composer-latest.phar
+$ git clone git@github.com:bfoujols/cli-manage-student.git
+$ cli-manage-student
+$ composer install --no-dev
+$ cd ..
+$ php -d phar.readonly=off phar-composer.phar build cli-manage-student
 [1/1] Creating phar mstud.phar
   - Adding main package "bfoujols/mstud"
   - Adding composer base files
@@ -65,7 +78,7 @@ Package du projet via une archive .phar via clue/phar-composer
     Using referenced chmod 0644
     Applying chmod 0644
     OK - Creating mstud.phar (1091.6 KiB) completed after 0.1s
-# php mstud.phar --version
+$ php mstud.phar --version
   Manage Student CLI <<version>>
 ```
 
