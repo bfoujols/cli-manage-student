@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 final class FileExtensionTest extends TestCase
 {
     /**
-     * CODE testArray
+     * @test FileExt01
      */
     public function testIsArray() : void
     {
@@ -15,14 +15,14 @@ final class FileExtensionTest extends TestCase
     }
 
     /**
-     * CODE testValueArray
+     * @test FileExt02
      */
     public  function  testArrayTypeXlsx() : void
     {
         $listExtension = \ManageStudent\Service\FileExtension::getListExtensionByName();
-        var_dump($listExtension);
-
-        $this->assertSame('*.XLSX', $listExtension[0]
+                $this->assertSame(
+                        '*.XLSX',
+                        $listExtension[0]
         );
     }
 }
