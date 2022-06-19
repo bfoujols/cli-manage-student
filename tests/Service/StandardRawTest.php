@@ -61,6 +61,17 @@ final class StandardRawTest extends TestCase
         );
     }
 
+    /**
+     * @return void
+     * CODE STDRAW05
+     */
+    public function testStdRaw05IsClean(): void
+    {
+        $raw = 'áàâãªäÁÀÂÃÄÍÌÎÏíìîïéèêëÉÈÊËóòôõºöÓÒÔÕÖúùûüÚÙÛÜçÇñÑ–’‘‹›‚“”«»„ .';
 
-
+        $this->assertSame(
+            'aaaaaaAAAAAIIIIiiiieeeeEEEEooooooOOOOOuuuuUUUUcCnN------------',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw)
+        );
+    }
 }
