@@ -9,12 +9,19 @@ interface FileModelInterface
      *
      * @return bool
      */
-    public static function analyse(array $structure): bool;
+    public function analyse(array $structure): bool;
 
     /**
      * Liste des étudiants student::class
      *
      * @return array
      */
-    public static function getStudents(): array;
+    public function getStudents(): array;
+
+    /**
+     * Retourne le nom du modele selectionne
+     *
+     * @return string
+     */
+    public function getNameModel(): string;
 }
