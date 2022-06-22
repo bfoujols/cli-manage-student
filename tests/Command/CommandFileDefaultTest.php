@@ -1,4 +1,6 @@
-f<?php
+<?php
+
+namespace Command;
 
 use ManageStudent\Command\CreateFileDefaultCommand;
 use ManageStudent\Service\CommandBanner;

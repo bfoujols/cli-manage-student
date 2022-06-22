@@ -42,7 +42,7 @@ class FileSource
      */
     public static function getFilePath(): string
     {
-        return self::$SplFileInfo->getPath() . '/' . self::$SplFileInfo->getRelativePathname();
+        return self::$SplFileInfo->getPath() . '/' . self::$SplFileInfo->getFilename();
     }
 
     /**
