@@ -10,7 +10,7 @@ A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches co
 
 ### Last release
 
-[MANAGE STUDENT v0.2.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+[MANAGE STUDENT v0.3.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
 
 ### Liste des features
 
@@ -28,16 +28,17 @@ Pour savoir la liste des commandes disponibles :
 
 ### Prerequis
 
-| Version | Service                                                             |
-|:--------|:--------------------------------------------------------------------|
-| ^7.4    | PHP Engine                                                          | 
-| ^2.0    | Composer Dependency Manager                                         |
+| Version | Service    |
+|:--------|:-----------|
+| ^7.4    | PHP Engine | 
+| ^7.4    | PHP CLI    |
 
 ## Develop
 
-Voici la procedure pour dev
+Je vous invite à participer au projet pour corriger, améliorer ce client CLI. Pour cela il faut suivre la procedure
+ci-dessous :
 
-```
+```shell
 $ git clone git@github.com:bfoujols/cli-manage-student.git
 $ cd cli-manage-student
 $ composer install
@@ -46,9 +47,13 @@ $ php bin/mstud
 
 ## Testing
 
+Le projet est testé par PHPUnit via le CI Github Action. Vous pouvez lancer les tests via cette demande :
+
+```shell
+composer test
 ```
-php vendor/bin/phpunit --testdox  tests
-```
+
+le raccourcie via composer execute : php vendor/bin/phpunit
 
 ## Package
 
@@ -64,15 +69,7 @@ $ php -d phar.readonly=off phar-composer.phar build cli-manage-student
 [1/1] Creating phar mstud.phar
   - Adding main package "bfoujols/mstud"
   - Adding composer base files
-  - Adding dependency "psr/container" from "vendor/psr/container/"
-  - Adding dependency "roave/security-advisories" from "vendor/roave/security-advisories/"
-  - Adding dependency "symfony/console" from "vendor/symfony/console/"
-  - Adding dependency "symfony/polyfill-ctype" from "vendor/symfony/polyfill-ctype/"
-  - Adding dependency "symfony/polyfill-intl-grapheme" from "vendor/symfony/polyfill-intl-grapheme/"
-  - Adding dependency "symfony/polyfill-intl-normalizer" from "vendor/symfony/polyfill-intl-normalizer/"
-  - Adding dependency "symfony/polyfill-mbstring" from "vendor/symfony/polyfill-mbstring/"
-  - Adding dependency "symfony/service-contracts" from "vendor/symfony/service-contracts/"
-  - Adding dependency "symfony/string" from "vendor/symfony/string/"
+  [...]
   - Setting main/stub
     Using referenced shebang "#!/usr/bin/env php"
     Using referenced chmod 0644
