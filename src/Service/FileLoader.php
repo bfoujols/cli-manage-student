@@ -26,12 +26,23 @@ class FileLoader
         $FileModelLoader = 'ManageStudent\Service\FileModel\FileModelLoad'.FileSource::getFileExtension();
         $exeFileModel = new $FileModelLoader();
         foreach ($exeFileModel->getListFileModel() as $FileModel) {
-           if ($FileModel::analyse($exeFileType->getContent()) === true) {
-               self::$FileModelSelect = $FileModel;
-               break;
-           }
+            $ModelClass = new $FileModel;
+            if ($ModelClass->analyse($exeFileType->getContent()) === true) {
+                self::$FileModelSelect = $ModelClass;
+                break;
+            }
         }
-        return self::$FileModelSelect::getStudents();
+        return self::$FileModelSelect->getStudents();
+    }
+
+    /**
+     * Retourne le model selectionne par l'analyse
+     *
+     * @return mixed
+     */
+    public static function getModelSelected()
+    {
+        return self::$FileModelSelect;
     }
 
 }
