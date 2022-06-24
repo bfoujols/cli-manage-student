@@ -1,7 +1,7 @@
 <?php
 namespace ManageStudent;
 
-use ManageStudent\Service\CommandBanner;
+use ManageStudent\Service\Command\CommandBanner;
 use Symfony\Component\Console\Application;
 
 class App extends Application

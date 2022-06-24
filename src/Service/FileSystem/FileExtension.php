@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service;
+namespace ManageStudent\Service\FileSystem;
 
 /**
  * Class FileExtension

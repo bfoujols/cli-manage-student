@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ManageStudent\Service;
+namespace ManageStudent\Service\Command;
 
 use DateTime;
 use DateTimeZone;

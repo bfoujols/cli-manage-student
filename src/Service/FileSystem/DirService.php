@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service;
+namespace ManageStudent\Service\FileSystem;
 
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;

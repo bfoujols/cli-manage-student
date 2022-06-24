@@ -3,7 +3,7 @@
 namespace Command;
 
 use ManageStudent\Command\CreateStudentCommand;
-use ManageStudent\Service\CommandBanner;
+use ManageStudent\Service\Command\CommandBanner;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
