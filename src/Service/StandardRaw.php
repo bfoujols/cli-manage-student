@@ -11,37 +11,37 @@ namespace ManageStudent\Service;
 class StandardRaw
 {
     /**
-     * Normalize to Standard Raw String
+     * Normalize to Standard Raw Upper
      * Rules Raw -> Clean -> Upper -> Raw (Standard)
      * @param String $raw
      * @return String|null
      */
-    public function normalizeSRString(String $raw): ?String
+    public function normalizeSRString(string $raw, bool $space = false): ?string
     {
-        return strtoupper($this->clean($raw));
+        return $space ? strtoupper($this->clean($this->cleanBeginToEndWhiteSpace($raw))) : strtoupper($this->clean($raw));
     }
 
     /**
-     * Normalize to Standard Raw UTF8
-     * Rules Raw -> Clean -> Raw (Normal)
+     * Normalize to Standard Raw UCFirst
+     * Rules Raw -> Clean -> UCFirst -> Raw (Standard)
      * @param String $raw
      * @return String|null
      */
-    public function normalizeSRSUcfirst(String $raw): ?String
+    public function normalizeSRSUcfirst(string $raw, bool $space = false): ?string
     {
-        return ucfirst($this->clean($raw));
+        return $space ? ucfirst(strtolower($this->clean($this->cleanBeginToEndWhiteSpace($raw)))) : ucfirst(strtolower($this->clean($raw)));
     }
 
 
     /**
      * Normalize to Standard Raw UTF8
-     * Rules Raw -> Clean -> Raw (Normal)
+     * Rules Raw -> Clean -> Raw (Standard)
      * @param String $raw
      * @return String|null
      */
-    public function normalizeSRUtf8(String $raw): ?String
+    public function normalizeSRUtf8(string $raw, bool $space = false): ?string
     {
-        return $this->clean($raw);
+        return $space ? $this->clean($this->cleanBeginToEndWhiteSpace($raw)) : $this->clean($raw);
     }
 
     /**
@@ -74,4 +74,15 @@ class StandardRaw
         );
         return preg_replace(array_keys($utf8), array_values($utf8), $text);
     }
+
+    /**
+     * Clean whitespace Begin To End
+     * @param String $raw
+     * @return String|null
+     */
+    private function cleanBeginToEndWhiteSpace(string $raw): ?string
+    {
+        return rtrim(ltrim($raw));
+    }
+
 }

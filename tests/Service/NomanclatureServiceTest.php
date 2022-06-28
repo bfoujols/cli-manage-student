@@ -80,7 +80,7 @@ class NomanclatureServiceTest extends TestCase
     /**
      * @test FileNom05
      */
-    public function testNom05WhitoutUpper(): void
+    public function testNom05FullLower(): void
     {
         $student = new Student();
 
@@ -149,6 +149,44 @@ class NomanclatureServiceTest extends TestCase
 
         $this->assertSame(
             "BABUTTA-Tom-801017",
+            (new NomanclatureService)->getNameWithoutType($student)
+        );
+    }
+
+    /**
+     * @test FileNom09
+     */
+    public function testNom09ComposeName(): void
+    {
+        $student = new Student();
+
+        $student->setNom("Babu tta");
+        $student->setPrenom("Tom Louis");
+
+        $dateNow = new DateTime('1980-10-17', new DateTimeZone('Europe/Paris'));
+        $student->setDateNaissance($dateNow);
+
+        $this->assertSame(
+            "BABU-TTA-Tom-louis-801017",
+            (new NomanclatureService)->getNameWithoutType($student)
+        );
+    }
+
+    /**
+     * @test FileNom10
+     */
+    public function testNom10ComposeNameWhitoutBlankBeginEnd(): void
+    {
+        $student = new Student();
+
+        $student->setNom("  Babu tta  ");
+        $student->setPrenom("  Tom Louis  ");
+
+        $dateNow = new DateTime('1980-10-17', new DateTimeZone('Europe/Paris'));
+        $student->setDateNaissance($dateNow);
+
+        $this->assertSame(
+            "BABU-TTA-Tom-louis-801017",
             (new NomanclatureService)->getNameWithoutType($student)
         );
     }
