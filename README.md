@@ -10,7 +10,7 @@ A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches co
 
 ### Last release
 
-[MANAGE STUDENT v0.3.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+[MANAGE STUDENT v0.3.1-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
 
 ### Liste des features
 
