@@ -3,11 +3,11 @@
 namespace ManageStudent\Command;
 
 use ManageStudent\Entity\Student;
-use ManageStudent\Service\CommandBanner;
-use ManageStudent\Service\DirService;
-use ManageStudent\Service\FileLoader;
-use ManageStudent\Service\FileSelector;
-use ManageStudent\Service\FileSource;
+use ManageStudent\Service\Command\CommandBanner;
+use ManageStudent\Service\FileSystem\DirService;
+use ManageStudent\Service\FileSystem\FileLoader;
+use ManageStudent\Service\FileSystem\FileSelector;
+use ManageStudent\Service\FileSystem\FileSource;
 use ManageStudent\Service\NomanclatureService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

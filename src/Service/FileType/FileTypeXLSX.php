@@ -3,7 +3,7 @@
 namespace ManageStudent\Service\FileType;
 
 use Exception;
-use ManageStudent\Service\FileSource;
+use ManageStudent\Service\FileSystem\FileSource;
 use Shuchkin\SimpleXLSX;
 
 /**

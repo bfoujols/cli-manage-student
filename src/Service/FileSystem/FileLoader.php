@@ -1,8 +1,6 @@
 <?php
 
-namespace ManageStudent\Service;
-
-use Symfony\Component\Finder\SplFileInfo;
+namespace ManageStudent\Service\FileSystem;
 
 /**
  * Class FileLoader

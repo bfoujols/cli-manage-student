@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1-alpha
+
+#### Fix bug :
+
+* Probleme sur la nomenclature en cas d'espace avant / après les noms et prénoms
+* Refactoring de class modele et dir service
+
 ## 0.3.0-alpha
 
 #### New feature :

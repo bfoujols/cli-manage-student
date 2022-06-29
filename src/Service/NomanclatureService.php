@@ -21,9 +21,9 @@ class NomanclatureService
     public function getNameWithoutType(Student $student): string
     {
         $clean = new StandardRaw();
-        return $clean->normalizeSRString($student->getNom())
+        return $clean->normalizeSRString($student->getNom(), true)
             . "-" .
-            $clean->normalizeSRSUcfirst($student->getPrenom())
+            $clean->normalizeSRSUcfirst($student->getPrenom(), true)
             . "-" .
             $this->getDateToString($student->getDateNaissance());
     }

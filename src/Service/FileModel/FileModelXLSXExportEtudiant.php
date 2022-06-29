@@ -6,7 +6,7 @@ use ManageStudent\Entity\Student;
 use ManageStudent\Exception\DateInvalideErrorException;
 use ManageStudent\Service\DateService;
 
-class FileModelXLSX_ExportEtudiant extends FileModel implements FileModelInterface
+class FileModelXLSXExportEtudiant extends FileModel implements FileModelInterface
 {
 
     public function analyse(array $structure): bool
