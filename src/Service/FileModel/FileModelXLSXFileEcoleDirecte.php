@@ -39,20 +39,18 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
                     $newStudent = new Student();
                     $newStudent = $this->splitStudentName($student[0], $newStudent);
 
-                    if ((new DateService())->isValid($student[1], "d/m/Y") === true) {
-                        $newStudent->setDateNaissance(DateTime::createFromFormat("d/m/Y", $student[1]));
-                    } else {
+                    if ((new DateService())->isValid($student[1], "d/Y/Y") === false) {
                         throw new DateInvalideErrorException();
                     }
+                    $newStudent->setDateNaissance(DateTime::createFromFormat("d/m/Y", $student[1]));
+
                     $tabStudent[] = $newStudent;
                 }
             } catch (DateInvalideErrorException $exception) {
-                // Todo Exception
-                echo "Date invalide " . $student[1];
+                printf("%s (%s) ERR%u \n", $exception->getMessage(), $student[1], "100");
                 exit;
             }
         }
-
 
         return $tabStudent;
     }
@@ -62,6 +60,11 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
         return "Fichier XLSX Export by Ecole Directe";
     }
 
+    /**
+     * @param string $fullName
+     * @param Student $student
+     * @return Student
+     */
     private function splitStudentName(string $fullName, Student $student): Student
     {
         $nom = "";
