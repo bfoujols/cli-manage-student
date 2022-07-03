@@ -18,7 +18,7 @@ class StandardRaw
      */
     public function normalizeSRString(string $raw, bool $space = false): ?string
     {
-        return $space ? strtoupper($this->clean($this->cleanBeginToEndWhiteSpace($raw))) : strtoupper($this->clean($raw));
+        return ($space === true) ? strtoupper($this->clean($this->cleanBeginToEndWhiteSpace($raw))) : strtoupper($this->clean($raw));
     }
 
     /**
@@ -29,7 +29,7 @@ class StandardRaw
      */
     public function normalizeSRSUcfirst(string $raw, bool $space = false): ?string
     {
-        return $space ? ucfirst(strtolower($this->clean($this->cleanBeginToEndWhiteSpace($raw)))) : ucfirst(strtolower($this->clean($raw)));
+        return ($space === true) ? ucfirst(strtolower($this->clean($this->cleanBeginToEndWhiteSpace($raw)))) : ucfirst(strtolower($this->clean($raw)));
     }
 
 
@@ -41,7 +41,7 @@ class StandardRaw
      */
     public function normalizeSRUtf8(string $raw, bool $space = false): ?string
     {
-        return $space ? $this->clean($this->cleanBeginToEndWhiteSpace($raw)) : $this->clean($raw);
+        return ($space === true) ? $this->clean($this->cleanBeginToEndWhiteSpace($raw)) : $this->clean($raw);
     }
 
     /**
