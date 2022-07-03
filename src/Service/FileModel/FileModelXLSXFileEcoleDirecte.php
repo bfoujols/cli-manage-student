@@ -39,7 +39,7 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
                     $newStudent = new Student();
                     $newStudent = $this->splitStudentName($student[0], $newStudent);
 
-                    if ((new DateService())->isValid($student[1], "d/Y/Y") === false) {
+                    if ((new DateService())->isValid($student[1], "d/m/Y") === false) {
                         throw new DateInvalideErrorException();
                     }
                     $newStudent->setDateNaissance(DateTime::createFromFormat("d/m/Y", $student[1]));
@@ -47,7 +47,7 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
                     $tabStudent[] = $newStudent;
                 }
             } catch (DateInvalideErrorException $exception) {
-                printf("%s (%s) ERR%u \n", $exception->getMessage(), $student[1], "100");
+                printf("%s %s(%s) ERR%u \n", $exception->getMessage(), "FileModelXLSXFileEcoleDirecte", $student[1], "100");
             }
         }
 
