@@ -2,6 +2,8 @@
 
 namespace ManageStudent\Service\FileSystem;
 
+use ManageStudent\Exception\NoTypeErrorException;
+
 /**
  * Class FileLoader
  *
@@ -18,19 +20,29 @@ class FileLoader
      */
     public static function execute(): array
     {
-        $FileTypeLoader = 'ManageStudent\Service\FileType\FileType'.FileSource::getFileExtension();
-        $exeFileType = new $FileTypeLoader();
+        try {
+            $FileTypeLoader = 'ManageStudent\Service\FileType\FileType' . FileSource::getFileExtension();
+            $exeFileType = new $FileTypeLoader();
 
-        $FileModelLoader = 'ManageStudent\Service\FileModel\FileModelLoad'.FileSource::getFileExtension();
-        $exeFileModel = new $FileModelLoader();
-        foreach ($exeFileModel->getListFileModel() as $FileModel) {
-            $ModelClass = new $FileModel;
-            if ($ModelClass->analyse($exeFileType->getContent()) === true) {
-                self::$FileModelSelect = $ModelClass;
-                break;
+            $FileModelLoader = 'ManageStudent\Service\FileModel\FileModelLoad' . FileSource::getFileExtension();
+            $exeFileModel = new $FileModelLoader();
+            foreach ($exeFileModel->getListFileModel() as $FileModel) {
+                $ModelClass = new $FileModel;
+                if ($ModelClass->analyse($exeFileType->getContent()) === true) {
+                    self::$FileModelSelect = $ModelClass;
+                    printf("%s \n", $ModelClass->getNameModel());
+
+                    return self::$FileModelSelect->getStudents();
+                }
             }
+
+            throw new NoTypeErrorException();
+
+        } catch (NoTypeErrorException $exception) {
+            printf("%s (%s) ERR%u \n", $exception->getMessage(), FileSource::getFilePath(), "300");
         }
-        return self::$FileModelSelect->getStudents();
+
+        return [];
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace ManageStudent\Service\FileType;
 
-use ManageStudent\Exception\ReadInvalideErrorException;
+use ManageStudent\Exception\NoTypeErrorException;
 use ManageStudent\Service\FileSystem\FileSource;
 use Shuchkin\SimpleXLSX;
 
@@ -20,9 +20,9 @@ class FileTypeXLSX implements FileTypeInterface
             if ($xlsx = SimpleXLSX::parse(FileSource::getFilePath())) {
                 return $xlsx->rows();
             }
-            throw new ReadInvalideErrorException();
+            throw new NoTypeErrorException();
 
-        } catch (ReadInvalideErrorException $exception) {
+        } catch (NoTypeErrorException $exception) {
             printf("%s (%s) ERR%u \n", $exception->getMessage(), SimpleXLSX::parseError(), "200");
         }
     }

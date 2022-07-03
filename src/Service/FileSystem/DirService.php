@@ -26,12 +26,14 @@ class DirService
      * @param string $path
      * @return bool|void
      */
-    public function createDir(string $path) {
+    public function createDir(string $path): bool
+    {
         try {
             if (!$this->file->exists($path)) {
                 $this->file->mkdir($path);
                 return true;
             }
+            return false;
         } catch (IOExceptionInterface $exception) {
             printf("%s (%s) \n", "Une erreur s'est produite lors de la création de votre répertoire", $exception->getMessage());
         }
