@@ -10,10 +10,11 @@ A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches co
 
 ### Last release
 
-[MANAGE STUDENT v0.3.1-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+[MANAGE STUDENT v0.4.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
 
 ### Liste des features
 
+* (new) Importation des étudiants à partir d'un export Ecole Directe
 * Commande "student:dir" : Creation des répertoires (alias dir) de chaque étudiant dans l'arborescence
 * Commande "file:default" : Creation d'un fichier XLSX vide afin d'utiliser la commande "student:dir"
 * Mise en place d'une nomenclature nom-prenom-datenaissance(aaaammjj) pour éviter les problemes homonyme
