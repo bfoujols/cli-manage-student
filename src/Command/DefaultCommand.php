@@ -3,6 +3,7 @@
 namespace ManageStudent\Command;
 
 use ManageStudent\Service\CkeckStack;
+use ManageStudent\Service\listCommand;
 use ManageStudent\Service\Command\CommandBanner;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -22,11 +23,14 @@ class DefaultCommand extends Command
             ''
         ]);
 
-        $check = new CkeckStack($output,  $render);
+        $check = new listCommand($output, $render);
+        $check->render();
+
+        $check = new CkeckStack($output, $render);
         $check->render();
 
         $render->writeln([
-            'Pour voir toutes les commandes, run: mstud list',
+            'Si vous avez un problème, https://github.com/bfoujols/manage-student-cli/discussions',
             ''
         ]);
 

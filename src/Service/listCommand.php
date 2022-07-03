@@ -7,15 +7,20 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
- * Class CheckStack
- * Gestion des prerequis
+ * Class ListCommand
+ * Liste des commandes disponibles
  *
  * @author Benoit Foujols
  */
-class CkeckStack
+class listCommand
 {
     private $output;
     private $symfonyStyle;
+    private $listCommand = [
+        ["file:default", "Création d'un tableau pour renseigner la liste des étudiants (sous format XLS)"],
+        ["student:dir", "Création des répertoires des étudiants à partir d'un fichier (XLS par defaut, export ECOLE DIRECTE)"],
+        ["list", "Pour voir les options disponibles"]
+    ];
 
     public function __construct(OutputInterface $output, SymfonyStyle $symfonyStyle)
     {
@@ -31,31 +36,15 @@ class CkeckStack
     public function render()
     {
         $this->symfonyStyle->writeln([
-            'Check votre env. : ',
+            'Liste des commandes : ',
         ]);
         $table = new Table($this->output);
         $table
-            ->setHeaders(['CHECK', 'SERVICE', 'VERSION'])
-            ->setRows($this->run())
-        ;
+            ->setHeaders(['COMMANDE', 'DESCRIPTION'])
+            ->setRows($this->listCommand);
         $table->render();
         $this->symfonyStyle->writeln([
             '',
         ]);
-    }
-
-    /**
-     * Execution des tests de prerequis
-     *
-     * @return array
-     */
-    private function run(): array
-    {
-        $listCheck = [];
-
-        $listCheck[] = (version_compare(PHP_VERSION, '7.4', '>=') === true) ? ["OK", 'PHP', PHP_VERSION] : ["KO", 'PHP', PHP_VERSION];
-        $listCheck[] = ["INFO", 'PHP', PHP_BINARY];
-
-        return $listCheck;
     }
 }
