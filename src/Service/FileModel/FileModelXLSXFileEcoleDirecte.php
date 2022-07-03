@@ -48,7 +48,6 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
                 }
             } catch (DateInvalideErrorException $exception) {
                 printf("%s (%s) ERR%u \n", $exception->getMessage(), $student[1], "100");
-                exit;
             }
         }
 
