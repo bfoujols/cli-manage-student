@@ -9,9 +9,10 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;
 
-final class CommandStudentDirTest extends TestCase
+final class CommandStudentDirDefaultTest extends TestCase
 {
     private $commandeTester;
+    private $fileExport = ['export-etudiant-defaut.xlsx'];
 
     protected function setUp(): void
     {
@@ -32,7 +33,7 @@ final class CommandStudentDirTest extends TestCase
      */
     public function testCommandeStudDirCreated(): void
     {
-        $this->commandeTester->setInputs(['export-etudiant.xlsx']);
+        $this->commandeTester->setInputs($this->fileExport);
         $this->commandeTester->execute([]);
         $output = $this->commandeTester->getDisplay();
 
@@ -52,7 +53,7 @@ final class CommandStudentDirTest extends TestCase
      */
     public function testCommandeStudDirExist(): void
     {
-        $this->commandeTester->setInputs(['export-etudiant.xlsx']);
+        $this->commandeTester->setInputs($this->fileExport);
         $this->commandeTester->execute([]);
         $output = $this->commandeTester->getDisplay();
 
@@ -76,7 +77,7 @@ final class CommandStudentDirTest extends TestCase
      */
     public function testCommandeStudDirRemoveAndCreate(): void
     {
-        $this->commandeTester->setInputs(['export-etudiant.xlsx']);
+        $this->commandeTester->setInputs($this->fileExport);
         $this->commandeTester->execute([]);
         $output = $this->commandeTester->getDisplay();
 

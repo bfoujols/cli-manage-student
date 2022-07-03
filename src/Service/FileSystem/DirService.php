@@ -33,7 +33,7 @@ class DirService
                 return true;
             }
         } catch (IOExceptionInterface $exception) {
-            echo "Une erreur s'est produite lors de la création de votre répertoire";
+            printf("%s (%s) \n", "Une erreur s'est produite lors de la création de votre répertoire", $exception->getMessage());
         }
     }
 

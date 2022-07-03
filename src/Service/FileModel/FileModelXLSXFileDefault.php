@@ -36,19 +36,19 @@ class FileModelXLSXFileDefault extends FileModel implements FileModelInterface
             try {
                 if ($item !== 0) {
                     $newStudent = new Student();
-                    $tabStudent[] = $newStudent->setNom($student[0])
+                    $newStudent->setNom($student[0])
                         ->setPrenom($student[1])
                         ->setStatut($student[3])
                         ->setNumero($student[4]);
-                    if ((new DateService())->isValid($student[2], "Y-m-d H:i:s") === true) {
-                        $newStudent->setDateNaissance(new \DateTime($student[2]));
-                    } else {
+
+                    if ((new DateService())->isValid($student[2], "Y-m-d H:i:s") === false) {
                         throw new DateInvalideErrorException();
                     }
+                    $newStudent->setDateNaissance(new \DateTime($student[2]));
+                    $tabStudent[] = $newStudent;
                 }
             } catch (DateInvalideErrorException $exception) {
-                // Todo Exception
-                echo "Date invalide " . $student[2];
+                printf("%s (%s) ERR%u \n", $exception->getMessage(), $student[2], "101");
                 exit;
             }
         }
