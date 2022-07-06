@@ -37,6 +37,8 @@ final class CommandStudentDirEcoleDirecteTest extends TestCase
         $this->commandeTester->execute([]);
         $output = $this->commandeTester->getDisplay();
 
+        //$this->assertStringContainsString('Fichier XLSX Export by Ecole Directe', $output);
+
         $this->assertStringContainsString('Creation du repertoire PIERRE-Or-el-000729', $output);
         $this->assertStringContainsString('Creation du repertoire BELHASSEN-Meir-moshe-020626', $output);
         $this->assertStringContainsString('Creation du repertoire BALAGRIYAN-Athittyanab-010828', $output);
@@ -56,6 +58,8 @@ final class CommandStudentDirEcoleDirecteTest extends TestCase
         $this->commandeTester->setInputs($this->fileExport);
         $this->commandeTester->execute([]);
         $output = $this->commandeTester->getDisplay();
+
+        //$this->assertStringContainsString('Fichier XLSX Export by Ecole Directe', $output);
 
         $this->assertStringContainsString('Repertoire deja existant PIERRE-Or-el-000729', $output);
         $this->assertStringContainsString('Repertoire deja existant BELHASSEN-Meir-moshe-020626', $output);
@@ -80,6 +84,8 @@ final class CommandStudentDirEcoleDirecteTest extends TestCase
         $this->commandeTester->setInputs($this->fileExport);
         $this->commandeTester->execute([]);
         $output = $this->commandeTester->getDisplay();
+
+        //$this->assertStringContainsString('Fichier XLSX Export by Ecole Directe', $output);
 
         $this->assertStringContainsString('Repertoire deja existant PIERRE-Or-el-000729', $output);
         $this->assertStringContainsString('Repertoire deja existant BELHASSEN-Meir-moshe-020626', $output);

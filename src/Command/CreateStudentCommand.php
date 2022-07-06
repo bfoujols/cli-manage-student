@@ -13,9 +13,8 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
-class CreateStudentCommand extends Command
+class CreateStudentCommand extends CommandManage
 {
 
     protected static $defaultName = 'student:dir';
@@ -26,24 +25,25 @@ class CreateStudentCommand extends Command
         $this->addArgument('path', InputArgument::OPTIONAL, 'Chemin du dossier source');
     }
 
+    /**
+     * @throws \Exception
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $render = new SymfonyStyle($input, $output);
-        $render->writeln(CommandBanner::getBanner());
-        $render->writeln([
+        self::$stdOutput->writeln([
+            CommandBanner::getBanner(),
             'Command : ' . self::$defaultName
         ]);
 
         $fileSelect = new FileSelector($input, $output);
         FileSource::setFileSource($fileSelect->getFile($input->getArgument('path')));
 
-        foreach (FileLoader::execute() as $student)
-        {
+        foreach (FileLoader::execute() as $student) {
             if ($student instanceof Student) {
                 $nameDir = new NomanclatureService();
                 $newDir = new DirService();
                 ($newDir->createDir($nameDir->getNameWithoutType($student)) === true) ? $result = "Creation du repertoire " : $result = "Repertoire deja existant ";
-                $render->writeln($result . $nameDir->getNameWithoutType($student));
+                self::$stdOutput->writeln($result . $nameDir->getNameWithoutType($student));
             }
         }
 

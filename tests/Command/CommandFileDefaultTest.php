@@ -34,7 +34,7 @@ final class CommandFileDefaultTest extends TestCase
     {
         $this->commandeTester->execute([]);
         $this->assertSame(
-            "714c97e495b7fee2dec4ce66002cca273394feb7787f7800aa15dd9d4d9b86b6",
+            "4cf886e7c52c2d3987099df7b3026e5edc6ecf93b6ec3818c34d1ecb890e91da",
             hash("sha256", $this->commandeTester->getDisplay())
         );
     }
@@ -46,7 +46,7 @@ final class CommandFileDefaultTest extends TestCase
     {
         $this->commandeTester->execute([]);
         $this->assertSame(
-            "25a208a6a0bc6b597b0e26d5076ba08adb3a28993e58ceafba41e4465c991150",
+            "3d3c98d44c27170a3ae07851161c2ce40e929e0d6e88e943596674ef0c2f2cea",
             hash("sha256", $this->commandeTester->getDisplay())
         );
         // Purge du fichier tester

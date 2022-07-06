@@ -2,6 +2,7 @@
 
 namespace ManageStudent\Service\FileSystem;
 
+use ManageStudent\Command\CommandManage;
 use ManageStudent\Exception\NoTypeErrorException;
 
 /**
@@ -30,7 +31,7 @@ class FileLoader
                 $ModelClass = new $FileModel;
                 if ($ModelClass->analyse($exeFileType->getContent()) === true) {
                     self::$FileModelSelect = $ModelClass;
-                    printf("%s \n", $ModelClass->getNameModel());
+                    CommandManage::getStdOutPut()->writeln($ModelClass->getNameModel());
 
                     return self::$FileModelSelect->getStudents();
                 }

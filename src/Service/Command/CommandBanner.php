@@ -40,7 +40,6 @@ class CommandBanner
         $banner .= "| |\/| / _` | ' \/ _` / _` / -_) \__ \  _| || / _` |            \n";
         $banner .= "|_|  |_\__,_|_||_\__,_\__, \___| |___/\__|\_,_\__,_|            \n";
         $banner .= "                      |___/ </info><comment>" . self::$version . "</comment>    \n";
-        $banner .= "\n";
 
         return $banner;
     }
