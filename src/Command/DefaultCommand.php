@@ -10,26 +10,25 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class DefaultCommand extends Command
+class DefaultCommand extends CommandManage
 {
     protected static $defaultName = 'default';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $render = new SymfonyStyle($input, $output);
-        $render->writeln(CommandBanner::getBanner());
-        $render->writeln([
+        self::$stdOutput->writeln([
+            CommandBanner::getBanner(),
             'Bienvenu dans la console Manage Student !',
             ''
         ]);
 
-        $check = new listCommand($output, $render);
+        $check = new listCommand($output, self::$stdOutput);
         $check->render();
 
-        $check = new CkeckStack($output, $render);
+        $check = new CkeckStack($output, self::$stdOutput);
         $check->render();
 
-        $render->writeln([
+        self::$stdOutput->writeln([
             'Si vous avez un problème, https://github.com/bfoujols/manage-student-cli/discussions',
             ''
         ]);
