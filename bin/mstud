@@ -2,7 +2,7 @@
 <?php
 
 // Envoie les erreurs à stderr, pas à stdout.
-ini_set('display_errors', 'stderr');
+ini_set('display_errors', '0');
 
 // Évitez d'afficher deux fois les erreurs PHP.
 ini_set('log_errors', '0');

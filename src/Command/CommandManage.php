@@ -16,14 +16,11 @@ class CommandManage extends Command
         parent::initialize($input, $output);
 
         // Debug mode
-        ini_set('display_errors', '0');
         if ($output->isVerbose()) {
             error_reporting($output->isDebug() ? E_ALL : E_ALL & ~E_DEPRECATED);
             ini_set('display_errors', 'stderr');
         } elseif ($output->isQuiet()) {
             error_reporting(false);
-        } else {
-            error_reporting(E_PARSE | E_ERROR);
         }
 
         self::$stdOutput = new SymfonyStyle($input, $output);
