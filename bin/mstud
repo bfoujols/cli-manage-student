@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-// Envoie les erreurs à stderr, pas à stdout.
-ini_set('display_errors', '0');
+// Envoie les erreurs à stderr, pas à stdout. ou (0)
+ini_set('display_errors', 'stderr');
 
 // Évitez d'afficher deux fois les erreurs PHP.
 ini_set('log_errors', '0');

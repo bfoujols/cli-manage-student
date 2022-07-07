@@ -18,7 +18,6 @@ class CommandManage extends Command
         // Debug mode
         if ($output->isVerbose()) {
             error_reporting($output->isDebug() ? E_ALL : E_ALL & ~E_DEPRECATED);
-            ini_set('display_errors', 'stderr');
         } elseif ($output->isQuiet()) {
             error_reporting(false);
         }
