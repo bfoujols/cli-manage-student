@@ -3,6 +3,7 @@
 namespace ManageStudent\Service\FileModel;
 
 use DateTime;
+use ManageStudent\Command\CommandManage;
 use ManageStudent\Entity\Student;
 use ManageStudent\Exception\DateInvalideErrorException;
 use ManageStudent\Service\DateService;
@@ -47,7 +48,7 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
                     $tabStudent[] = $newStudent;
                 }
             } catch (DateInvalideErrorException $exception) {
-                printf("%s %s(%s) ERR%u \n", $exception->getMessage(), "FileModelXLSXFileEcoleDirecte", $student[1], "100");
+                CommandManage::getStdOutPut()->writeln($exception->getMessage() . " FileModelXLSXFileEcoleDirecte(" . $student[1] . ") ERR100 ");
             }
         }
 
