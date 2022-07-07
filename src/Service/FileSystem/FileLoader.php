@@ -40,7 +40,7 @@ class FileLoader
             throw new NoTypeErrorException();
 
         } catch (NoTypeErrorException $exception) {
-            printf("%s (%s) ERR%u \n", $exception->getMessage(), FileSource::getFilePath(), "300");
+            CommandManage::getStdOutPut()->writeln($exception->getMessage() . " (" . FileSource::getFilePath() . ") ERR300");
         }
 
         return [];
