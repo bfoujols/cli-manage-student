@@ -2,7 +2,7 @@
 
 namespace Service;
 
-use ManageStudent\Service\DateService;
+use ManageStudent\Service\Date;
 use PHPUnit\Framework\TestCase;
 
 final class DateServiceTest extends TestCase
@@ -14,7 +14,7 @@ final class DateServiceTest extends TestCase
     public function testDate01IsValid(): void
     {
         $this->assertIsBool(
-            (new DateService())->isValid("2020-01-30")
+            (new Date())->isValid("2020-01-30")
         );
     }
 
@@ -25,7 +25,7 @@ final class DateServiceTest extends TestCase
     public function testDate02IsNotValid(): void
     {
         $this->assertIsBool(
-            (new DateService())->isValid("2020-30-01")
+            (new Date())->isValid("2020-30-01")
         );
     }
 
@@ -36,7 +36,7 @@ final class DateServiceTest extends TestCase
     public function testDate03IsTrueWithFormat(): void
     {
         $this->assertTrue(
-            (new DateService())->isValid("2020/01/30", "Y/m/d")
+            (new Date())->isValid("2020/01/30", "Y/m/d")
         );
     }
 
@@ -47,7 +47,7 @@ final class DateServiceTest extends TestCase
     public function testDate04IsFalseWithoutFormat(): void
     {
         $this->assertFalse(
-            (new DateService())->isValid("2020/30/01")
+            (new Date())->isValid("2020/30/01")
         );
     }
 
@@ -58,7 +58,7 @@ final class DateServiceTest extends TestCase
     public function testDate05IsNotValideDayWithFormat(): void
     {
         $this->assertFalse(
-            (new DateService())->isValid("2020/30/01", "Y/m/d")
+            (new Date())->isValid("2020/30/01", "Y/m/d")
         );
     }
 
@@ -69,7 +69,7 @@ final class DateServiceTest extends TestCase
     public function testDate06IsNotValideYearDouble(): void
     {
         $this->assertFalse(
-            (new DateService())->isValid("20/30/01", "Y/m/d")
+            (new Date())->isValid("20/30/01", "Y/m/d")
         );
     }
 }

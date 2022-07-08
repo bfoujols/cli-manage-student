@@ -5,12 +5,12 @@ namespace ManageStudent\Service;
 use DateTime;
 
 /**
- * Class DateService
+ * Class Date
  * Gestion des dates
  *
  * @author Benoit Foujols
  */
-class DateService
+class Date
 {
     /**
      * Validation de la date au niveau de son format

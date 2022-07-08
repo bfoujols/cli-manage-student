@@ -6,12 +6,12 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * Class DirService
+ * Class Dir
  * Gestion du file directory
  *
  * @author Benoit Foujols
  */
-class DirService
+class Dir
 {
     private $file;
 

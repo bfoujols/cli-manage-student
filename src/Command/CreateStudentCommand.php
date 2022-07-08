@@ -4,7 +4,7 @@ namespace ManageStudent\Command;
 
 use ManageStudent\Entity\Student;
 use ManageStudent\Service\Command\CommandBanner;
-use ManageStudent\Service\FileSystem\DirService;
+use ManageStudent\Service\FileSystem\Dir;
 use ManageStudent\Service\FileSystem\FileLoader;
 use ManageStudent\Service\FileSystem\FileSelector;
 use ManageStudent\Service\FileSystem\FileSource;
@@ -41,7 +41,7 @@ class CreateStudentCommand extends CommandManage
         foreach (FileLoader::execute() as $student) {
             if ($student instanceof Student) {
                 $nameDir = new NomanclatureService();
-                $newDir = new DirService();
+                $newDir = new Dir();
                 ($newDir->createDir($nameDir->getNameWithoutType($student)) === true) ? $result = "Creation du repertoire " : $result = "Repertoire deja existant ";
                 self::$stdOutput->writeln($result . $nameDir->getNameWithoutType($student));
             }

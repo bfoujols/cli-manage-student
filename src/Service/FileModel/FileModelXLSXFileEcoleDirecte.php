@@ -6,7 +6,7 @@ use DateTime;
 use ManageStudent\Command\CommandManage;
 use ManageStudent\Entity\Student;
 use ManageStudent\Exception\DateInvalideErrorException;
-use ManageStudent\Service\DateService;
+use ManageStudent\Service\Date;
 
 class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterface
 {
@@ -40,7 +40,7 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
                     $newStudent = new Student();
                     $newStudent = $this->splitStudentName($student[0], $newStudent);
 
-                    if ((new DateService())->isValid($student[1], "d/m/Y") === false) {
+                    if ((new Date())->isValid($student[1], "d/m/Y") === false) {
                         throw new DateInvalideErrorException();
                     }
                     $newStudent->setDateNaissance(DateTime::createFromFormat("d/m/Y", $student[1]));

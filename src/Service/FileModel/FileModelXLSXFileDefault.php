@@ -5,7 +5,7 @@ namespace ManageStudent\Service\FileModel;
 use ManageStudent\Command\CommandManage;
 use ManageStudent\Entity\Student;
 use ManageStudent\Exception\DateInvalideErrorException;
-use ManageStudent\Service\DateService;
+use ManageStudent\Service\Date;
 
 class FileModelXLSXFileDefault extends FileModel implements FileModelInterface
 {
@@ -42,7 +42,7 @@ class FileModelXLSXFileDefault extends FileModel implements FileModelInterface
                         ->setStatut($student[3])
                         ->setNumero($student[4]);
 
-                    if ((new DateService())->isValid($student[2], "Y-m-d H:i:s") === false) {
+                    if ((new Date())->isValid($student[2], "Y-m-d H:i:s") === false) {
                         throw new DateInvalideErrorException();
                     }
                     $newStudent->setDateNaissance(new \DateTime($student[2]));
