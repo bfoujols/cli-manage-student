@@ -38,6 +38,11 @@ class CreateStudentCommand extends CommandManage
         $fileSelect = new FileSelector($input, $output);
         FileSource::setFileSource($fileSelect->getFile($input->getArgument('path')));
 
+        CommandManage::getStdOutPut()->writeln([
+            'Vous avez selectionné le fichier suivant : ',
+            FileSource::getFilePath()
+        ]);
+
         foreach (FileLoader::execute() as $student) {
             if ($student instanceof Student) {
                 $nameDir = new NomanclatureService();

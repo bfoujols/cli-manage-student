@@ -7,6 +7,7 @@ use ManageStudent\Command\CommandManage;
 use ManageStudent\Entity\Student;
 use ManageStudent\Exception\DateInvalideErrorException;
 use ManageStudent\Service\Date;
+use ManageStudent\Service\StandardRaw;
 
 class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterface
 {
@@ -71,7 +72,7 @@ class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterf
         $prenom = "";
 
         // Split avec un espace les mots
-        $tabName = explode(" ", $fullName);
+        $tabName = explode(" ", (new StandardRaw())->normalizeSRUtf8($fullName, false, true));
         // Boucle pour trier le mot en majuscule (nom) et miniscule (Prenom)
         foreach ($tabName as $nameRaw) {
             (preg_match('/^[A-Z0-9]+$/', $nameRaw)) ?
