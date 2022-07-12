@@ -2,6 +2,7 @@
 
 namespace ManageStudent\Service\FileSystem;
 
+use ManageStudent\Command\CommandManage;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -35,7 +36,7 @@ class Dir
             }
             return false;
         } catch (IOExceptionInterface $exception) {
-            printf("%s (%s) \n", "Une erreur s'est produite lors de la création de votre répertoire", $exception->getMessage());
+            CommandManage::getStdOutPut()->writeln("Une erreur s'est produite lors de la création de votre répertoire (" . $exception->getMessage() . ")");
         }
     }
 
