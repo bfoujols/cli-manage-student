@@ -7,7 +7,8 @@ class FileModelLoadXLSX implements FileModelLoadInterface
     public function getListFileModel(): array
     {
         return [
-            \ManageStudent\Service\FileModel\FileModelXLSXExportEtudiant::class
+            \ManageStudent\Service\FileModel\FileModelXLSXFileDefault::class,
+            \ManageStudent\Service\FileModel\FileModelXLSXFileEcoleDirecte::class
         ];
     }
 }

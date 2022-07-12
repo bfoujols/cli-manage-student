@@ -74,4 +74,116 @@ final class StandardRawTest extends TestCase
             (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw)
         );
     }
+
+    /**
+     * @return void
+     * CODE STDRAW06
+     */
+    public function testStdRaw06IsCleanToSpace(): void
+    {
+        $raw = 'áàâãªäÁÀÂÃÄÍÌÎÏíìîïéèêëÉÈÊËóòôõºöÓÒÔÕÖúùûüÚÙÛÜçÇñÑ–’‘‹›‚“”«»„ .';
+
+        $this->assertSame(
+            'aaaaaaAAAAAIIIIiiiieeeeEEEEooooooOOOOOuuuuUUUUcCnN            ',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, false, true)
+        );
+    }
+
+    /**
+     * @return void
+     * CODE STDRAW07
+     */
+    public function testStdRaw07IsCleanBeginSpace(): void
+    {
+        $raw = '      Benoit';
+
+        $this->assertSame(
+            'Benoit',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+        );
+    }
+
+    /**
+     * @return void
+     * CODE STDRAW08
+     */
+    public function testStdRaw08IsCleanEndSpace(): void
+    {
+        $raw = 'Benoit     ';
+
+        $this->assertSame(
+            'Benoit',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+        );
+    }
+
+    /**
+     * @return void
+     * CODE STDRAW09
+     */
+    public function testStdRaw09IsCleanBeginEndSpace(): void
+    {
+        $raw = '    Benoit     ';
+
+        $this->assertSame(
+            'Benoit',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+        );
+    }
+
+    /**
+     * @return void
+     * CODE STDRAW10
+     */
+    public function testStdRaw10IsCleanBeginEndAddHyphen(): void
+    {
+        $raw = '    Jean Benoit     ';
+
+        $this->assertSame(
+            'Jean-Benoit',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+        );
+    }
+
+    /**
+     * @return void
+     * CODE STDRAW11
+     */
+    public function testStdRaw11IsCleanBeginEndAndDelSpace(): void
+    {
+        $raw = '    Jean Benoit     ';
+
+        $this->assertSame(
+            'Jean Benoit',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true, true)
+        );
+    }
+
+    /**
+     * @return void
+     * CODE STDRAW12
+     */
+    public function testStdRaw12IsCleanBeginEndAndOffDelHyphen(): void
+    {
+        $raw = '    Jean-Benoit     ';
+
+        $this->assertSame(
+            'Jean-Benoit',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+        );
+    }
+
+    /**
+     * @return void
+     * CODE STDRAW13
+     */
+    public function testStdRaw13IsCleanBeginEndAndDelHyphen(): void
+    {
+        $raw = '    Jean-Benoit     ';
+
+        $this->assertSame(
+            'Jean Benoit',
+            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true, true)
+        );
+    }
 }

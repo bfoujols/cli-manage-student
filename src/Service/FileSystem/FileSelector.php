@@ -18,7 +18,6 @@ class FileSelector
 {
     private $input;
     private $output;
-    private $fileSelected;
 
     public function __construct(InputInterface $input, OutputInterface $output)
     {
@@ -34,14 +33,15 @@ class FileSelector
      */
     public function getFile($path): SplFileInfo
     {
-        $file = new FinderType((string) $path);
+        $file = new FinderType((string)$path);
         if ($path === null) {
             $file->setPath($file->getPathCurrent());
         }
 
         $choiceFile = new QuestionType($this->input, $this->output);
         $finalChoiseFile = $choiceFile->Choice("Quel fichier source pour cette action ?", $file->getFileListAccept(), 'Merci de choisir un fichier');
-        return $this->fileSelected = $file->setFileSelected($finalChoiseFile);
+
+        return $file->setFileSelected($finalChoiseFile);
     }
 
 }

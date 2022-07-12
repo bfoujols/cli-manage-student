@@ -18,7 +18,7 @@ class StandardRaw
      */
     public function normalizeSRString(string $raw, bool $space = false): ?string
     {
-        return $space ? strtoupper($this->clean($this->cleanBeginToEndWhiteSpace($raw))) : strtoupper($this->clean($raw));
+        return ($space === true) ? strtoupper($this->clean($this->cleanBeginToEndWhiteSpace($raw))) : strtoupper($this->clean($raw));
     }
 
     /**
@@ -29,19 +29,21 @@ class StandardRaw
      */
     public function normalizeSRSUcfirst(string $raw, bool $space = false): ?string
     {
-        return $space ? ucfirst(strtolower($this->clean($this->cleanBeginToEndWhiteSpace($raw)))) : ucfirst(strtolower($this->clean($raw)));
+        return ($space === true) ? ucfirst(strtolower($this->clean($this->cleanBeginToEndWhiteSpace($raw)))) : ucfirst(strtolower($this->clean($raw)));
     }
 
 
     /**
      * Normalize to Standard Raw UTF8
      * Rules Raw -> Clean -> Raw (Standard)
-     * @param String $raw
+     * @param String $raw Source à nettoyer
+     * @param bool $space Supprimer les espaces avant et après la source
+     * @param bool $nonbreaking Supprimer les
      * @return String|null
      */
-    public function normalizeSRUtf8(string $raw, bool $space = false): ?string
+    public function normalizeSRUtf8(string $raw, bool $space = false, bool $nonbreaking = false): ?string
     {
-        return $space ? $this->clean($this->cleanBeginToEndWhiteSpace($raw)) : $this->clean($raw);
+        return ($space === true) ? $this->clean($this->cleanBeginToEndWhiteSpace($raw), $nonbreaking) : $this->clean($raw, $nonbreaking);
     }
 
     /**
@@ -49,7 +51,7 @@ class StandardRaw
      * @param String $text
      * @return String|null
      */
-    private function clean(String $text): ?String
+    private function clean(string $text, bool $nonbreaking = false): ?string
     {
         $utf8 = array(
             '/[áàâãªä]/u' => 'a',
@@ -69,9 +71,10 @@ class StandardRaw
             '/–/' => '-', // UTF-8 hyphen to "normal" hyphen
             '/[’‘‹›‚]/u' => ' ', // Literally a single quote
             '/[“”«»„]/u' => ' ', // Double quote
-            '/ /' => '-', // nonbreaking space (equiv. to 0x160)
             '/[.]/' => '',
         );
+        $utf8['/ /'] = ($nonbreaking === true) ? ' ' : '-'; // nonbreaking space (equiv. to 0x160)
+        $utf8['/-/'] = ($nonbreaking === true) ? ' ' : '-';
         return preg_replace(array_keys($utf8), array_values($utf8), $text);
     }
 

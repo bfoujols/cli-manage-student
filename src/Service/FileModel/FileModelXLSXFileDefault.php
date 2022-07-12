@@ -2,11 +2,12 @@
 
 namespace ManageStudent\Service\FileModel;
 
+use ManageStudent\Command\CommandManage;
 use ManageStudent\Entity\Student;
 use ManageStudent\Exception\DateInvalideErrorException;
-use ManageStudent\Service\DateService;
+use ManageStudent\Service\Date;
 
-class FileModelXLSXExportEtudiant extends FileModel implements FileModelInterface
+class FileModelXLSXFileDefault extends FileModel implements FileModelInterface
 {
 
     public function analyse(array $structure): bool
@@ -36,20 +37,19 @@ class FileModelXLSXExportEtudiant extends FileModel implements FileModelInterfac
             try {
                 if ($item !== 0) {
                     $newStudent = new Student();
-                    $tabStudent[] = $newStudent->setNom($student[0])
+                    $newStudent->setNom($student[0])
                         ->setPrenom($student[1])
                         ->setStatut($student[3])
                         ->setNumero($student[4]);
-                    if ((new DateService())->isValid($student[2], "Y-m-d H:i:s") === true) {
-                        $newStudent->setDateNaissance(new \DateTime($student[2]));
-                    } else {
+
+                    if ((new Date())->isValid($student[2], "Y-m-d H:i:s") === false) {
                         throw new DateInvalideErrorException();
                     }
+                    $newStudent->setDateNaissance(new \DateTime($student[2]));
+                    $tabStudent[] = $newStudent;
                 }
             } catch (DateInvalideErrorException $exception) {
-                // Todo Exception
-                echo "Date invalide " . $student[2];
-                exit;
+                CommandManage::getStdOutPut()->writeln($exception->getMessage() . " (" . $student[2] . ") ERR101 ");
             }
         }
 

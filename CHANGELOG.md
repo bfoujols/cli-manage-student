@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0-alpha
+
+#### New feature :
+
+* Nouveau fichier d'importation. A partir des fichiers export Ecole Direct, vous pouvez jouer avec les commandes
+
+#### Fix bug :
+
+* Refactoring de class by Codacy
+
 ## 0.3.1-alpha
 
 #### Fix bug :

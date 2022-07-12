@@ -22,7 +22,7 @@ class FileSource
      */
     public static function setFileSource(SplFileInfo $fileInfo): SplFileInfo
     {
-        return self::$SplFileInfo ?? (self::$SplFileInfo = $fileInfo);
+        return self::$SplFileInfo = $fileInfo;
     }
 
     /**

@@ -1,19 +1,26 @@
 # Manage Student Cli
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/df1ed0cf2b5a46e68a822e674ca8e671)](https://www.codacy.com/gh/bfoujols/manage-student-cli/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bfoujols/manage-student-cli&amp;utm_campaign=Badge_Grade)
 ![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/codacy.yml/badge.svg)
-![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing.yml/badge.svg)
 
-Création d'un invité de commande pour faciliter la gestion des étudiants. 
-A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches comme la création des dossiers d'étudiant ou d'autres fichiers template (comme la création des fiches d'examen)
+![CI](https://img.shields.io/badge/php-7.4%20to%208.1-777bb3.svg?logo=php&logoColor=white&labelColor=555555)
+![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing.yml/badge.svg)
+![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing-php80.yml/badge.svg)
+![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing-php81.yml/badge.svg)
+
+Création d'un invité de commande pour faciliter la gestion des étudiants.
+A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches comme la création des dossiers d'étudiant
+ou d'autres fichiers template (comme la création des fiches d'examen)
 
 ## Features
 
 ### Last release
 
-[MANAGE STUDENT v0.3.1-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+[MANAGE STUDENT v0.4.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
 
 ### Liste des features
 
+* (new) Importation des étudiants à partir d'un export Ecole Directe
 * Commande "student:dir" : Creation des répertoires (alias dir) de chaque étudiant dans l'arborescence
 * Commande "file:default" : Creation d'un fichier XLSX vide afin d'utiliser la commande "student:dir"
 * Mise en place d'une nomenclature nom-prenom-datenaissance(aaaammjj) pour éviter les problemes homonyme

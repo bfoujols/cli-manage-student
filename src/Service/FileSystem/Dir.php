@@ -2,16 +2,17 @@
 
 namespace ManageStudent\Service\FileSystem;
 
+use ManageStudent\Command\CommandManage;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * Class DirService
+ * Class Dir
  * Gestion du file directory
  *
  * @author Benoit Foujols
  */
-class DirService
+class Dir
 {
     private $file;
 
@@ -26,14 +27,16 @@ class DirService
      * @param string $path
      * @return bool|void
      */
-    public function createDir(string $path) {
+    public function createDir(string $path): bool
+    {
         try {
             if (!$this->file->exists($path)) {
                 $this->file->mkdir($path);
                 return true;
             }
+            return false;
         } catch (IOExceptionInterface $exception) {
-            echo "Une erreur s'est produite lors de la création de votre répertoire";
+            CommandManage::getStdOutPut()->writeln("Une erreur s'est produite lors de la création de votre répertoire (" . $exception->getMessage() . ")");
         }
     }
 
