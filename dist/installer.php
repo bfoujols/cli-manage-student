@@ -24,16 +24,14 @@ class Installer
     private string $rootDir;
     private string $manifest;
     private string $nameCommand;
-    private string $userAgent;
 
     public function __construct()
     {
         $setup = array(
             "executable" => "mstud",
             "rootDir" => ".mstud",
-            "manifest" => "https://raw.githubusercontent.com/bfoujols/manage-student-cli/develop/dist/manifest.json",
-            "nameCommand" => "Manage Stud CLI",
-            'userAgent' => 'mstud-cli',
+            "manifest" => "https://raw.githubusercontent.com/bfoujols/manage-student-cli/main/dist/manifest.json",
+            "nameCommand" => "Manage Stud CLI"
         );
 
         foreach ($setup as $key => $value) {
@@ -41,14 +39,6 @@ class Installer
                 $this->{$key} = $value;
             }
         }
-
-        $this->userAgent = sprintf(
-            '%s-installer (%s; %s; PHP %s)',
-            $this->userAgent ?: 'cli',
-            php_uname('s'),
-            php_uname('r'),
-            PHP_VERSION
-        );
 
         $this->executableName = $this->executable . ".phar";
     }

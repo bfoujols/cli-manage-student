@@ -39,7 +39,7 @@ php mstud.phar list
 Pour installer la commande, ouvrez un terminal :
 
 ``` shell
-curl -fsS https://raw.githubusercontent.com/bfoujols/manage-student-cli/develop/dist/installer | php
+curl -fsS https://raw.githubusercontent.com/bfoujols/manage-student-cli/main/dist/installer.php | php
 ```
 
 ### Prerequis
