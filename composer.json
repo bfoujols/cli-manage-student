@@ -17,7 +17,8 @@
         "symfony/console": "^5.4",
         "symfony/filesystem": "^5.4",
         "symfony/finder": "^5.4",
-        "shuchkin/simplexlsx": "^1.0"
+        "shuchkin/simplexlsx": "^1.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",

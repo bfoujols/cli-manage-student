@@ -29,16 +29,28 @@ ou d'autres fichiers template (comme la création des fiches d'examen)
 ## Basic Usage
 
 Pour savoir la liste des commandes disponibles :
+
 ``` shell
-# php mstud.phar list
+php mstud.phar list
+```
+
+## Installation
+
+Pour installer la commande, ouvrez un terminal :
+
+``` shell
+curl -fsS https://raw.githubusercontent.com/bfoujols/manage-student-cli/main/dist/installer.php | php
 ```
 
 ### Prerequis
 
 | Version | Service    |
 |:--------|:-----------|
+| ^10.11  | MAC OS     |
+| ^4.11   | LINUX      |
 | ^7.4    | PHP Engine | 
 | ^7.4    | PHP CLI    |
+| ^7.6    | CURL       |
 
 ## Develop
 
