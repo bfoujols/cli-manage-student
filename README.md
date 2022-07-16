@@ -31,7 +31,7 @@ ou d'autres fichiers template (comme la création des fiches d'examen)
 Pour savoir la liste des commandes disponibles :
 
 ``` shell
-# php mstud.phar list
+php mstud.phar list
 ```
 
 ## Installation
@@ -39,7 +39,7 @@ Pour savoir la liste des commandes disponibles :
 Pour installer la commande, ouvrez un terminal :
 
 ``` shell
-# curl -fsS https://raw.githubusercontent.com/bfoujols/manage-student-cli/develop/dist/installer | php
+curl -fsS https://raw.githubusercontent.com/bfoujols/manage-student-cli/develop/dist/installer | php
 ```
 
 ### Prerequis
