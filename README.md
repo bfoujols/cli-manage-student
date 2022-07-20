@@ -16,7 +16,7 @@ ou d'autres fichiers template (comme la création des fiches d'examen)
 
 ### Last release
 
-[MANAGE STUDENT v0.4.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+[MANAGE STUDENT v0.5.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
 
 ### Liste des features
 
