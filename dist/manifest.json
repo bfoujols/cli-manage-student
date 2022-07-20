@@ -1,8 +1,8 @@
 [
   {
     "version": "0.5.0-alpha",
-    "sha1": "",
-    "sha256": "",
+    "sha1": "23dc84eae8ded89af07af9d5eb9ac1dc49ddd269",
+    "sha256": "81efa09d224c529f01a838f14e54ef3329c4f88e4172897f556b7fbe966416fb",
     "name": "mstud.phar",
     "url": "https://github.com/bfoujols/manage-student-cli/releases/download/v0.5.0-alpha/mstud.phar",
     "php": {
