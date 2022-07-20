@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0-alpha
+
+#### New feature :
+
+* Nouveau fichier d'importation. A partir des fichiers export Academique (cyclable), vous pouvez jouer avec les
+  commandes
+* Mise en place d'un installer pour mettre la commande dans votre systeme (compatible Linux / MacOs)
+
 ## 0.4.0-alpha
 
 #### New feature :
