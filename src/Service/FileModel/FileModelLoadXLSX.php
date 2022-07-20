@@ -8,7 +8,7 @@ class FileModelLoadXLSX implements FileModelLoadInterface
     {
         return [
             \ManageStudent\Service\FileModel\FileModelXLSXFileDefault::class,
-            \ManageStudent\Service\FileModel\FileModelXLSXFileAcademique::class,
+            \ManageStudent\Service\FileModel\FileModelXLSXFileEcoleDirecte::class,
             \ManageStudent\Service\FileModel\FileModelXLSXFileAcademique::class
         ];
     }
