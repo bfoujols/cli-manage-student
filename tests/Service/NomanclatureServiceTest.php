@@ -26,7 +26,7 @@ class NomanclatureServiceTest extends TestCase
     /**
      * @test FileNom02
      */
-    public function testNom02IsString() : void
+    public function testNom02IsString(): void
     {
         $student = new Student();
         $student->setNom("Babutta");
@@ -42,7 +42,7 @@ class NomanclatureServiceTest extends TestCase
     /**
      * @test FileNom03
      */
-    public function testNom03WhithoutType() : void
+    public function testNom03WhithoutType(): void
     {
         $student = new Student();
 
