@@ -55,9 +55,9 @@ class Repository
     /**
      * @return Repository
      */
-    public function setDateCreated(): Repository
+    public function setDateCreated(\DateTime $dateTime): Repository
     {
-        $this->dateCreated = new \DateTime('now');
+        $this->dateCreated = $dateTime;
         return $this;
     }
 }
