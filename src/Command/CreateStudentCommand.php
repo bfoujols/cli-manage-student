@@ -45,6 +45,7 @@ class CreateStudentCommand extends CommandManage
         ]);
 
         $fileLock = (new FileLock())->createFileLock();
+        $fileLock->setImport(FileSource::getFilePath());
 
         foreach (FileLoader::execute() as $student) {
             if ($student instanceof Student) {
@@ -53,10 +54,9 @@ class CreateStudentCommand extends CommandManage
                 $nameRepository = $nameDir->getNameWithoutType($student);
                 $idStuden = $nameDir->getHashForId($student, true);
                 if ($newDir->createDir($nameRepository) === true) {
-                    $fileLock->setRepository($idStuden, $nameRepository, true);
+                    $fileLock->setRepository($idStuden, $nameRepository);
                     $result = "Creation du repertoire ";
                 } else {
-                    $fileLock->setRepository($idStuden, $nameRepository);
                     $result = "Repertoire deja existant ";
                 }
 

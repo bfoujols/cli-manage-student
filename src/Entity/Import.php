@@ -55,9 +55,9 @@ class Import
     /**
      * @return Import
      */
-    public function setDateCreated(): Import
+    public function setDateCreated(\DateTime $dateTime): Import
     {
-        $this->dateCreated = new \DateTime('now');
+        $this->dateCreated = $dateTime;
         return $this;
     }
 }

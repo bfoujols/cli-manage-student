@@ -3,6 +3,7 @@
 namespace ManageStudent\Service\Config;
 
 use DateTime;
+use ManageStudent\Entity\Import;
 use ManageStudent\Entity\Repository;
 use ManageStudent\Entity\Student;
 use ManageStudent\Service\Date;
@@ -48,17 +49,28 @@ class FileLock extends FileConfig
         foreach ($fileLock["listRepository"] as $key => $item) {
             $this->listRepository[$key] = (new Repository())->setId($item["id"])->setName($item["name"])->setDateCreated(DateTime::createFromFormat($this->formatDateTime, $item["dateCreated"]));
         }
+
+        foreach ($fileLock["listImport"] as $key => $item) {
+            $this->listImport[$key] = (new Import())->setId($item["id"])->setName($item["name"])->setDateCreated(DateTime::createFromFormat($this->formatDateTime, $item["dateCreated"]));
+        }
     }
 
     /**
      * @param string $nameRepository
      * @return $this
      */
-    public function setRepository(string $idStudent, string $nameRepository, bool $new = false): FileLock
+    public function setRepository(string $idStudent, string $nameRepository): FileLock
     {
-        if ($new === true) {
-            $this->listRepository[$idStudent] = (new Repository())->setDateCreated(new \DateTime('now'))->setId($nameRepository)->setName($nameRepository);
-        }
+        $this->listRepository[$idStudent] = (new Repository())->setDateCreated(new \DateTime('now'))->setId($nameRepository)->setName($nameRepository);
+
+        return $this;
+    }
+
+    public function setImport(string $nameImport): FileLock
+    {
+        // TODO Change le hash
+        $id = hash("sha1", $nameImport . (new \DateTime('now'))->format($this->formatDateTime));
+        $this->listImport[$id] = (new Import())->setId($id)->setName($nameImport)->setDateCreated(new \DateTime('now'));
 
         return $this;
     }
@@ -71,9 +83,23 @@ class FileLock extends FileConfig
         $arrFileLock["dateCreated"] = $this->dateCreated->format($this->formatDateTime);
         $arrFileLock["dateUpdated"] = $this->dateUpdated->format($this->formatDateTime);
         $arrFileLock["listRepository"] = $this->getListRepositoryToArray();
-        $arrFileLock["listImport"] = [];
+        $arrFileLock["listImport"] = $this->getListImportToArray();
 
         return $arrFileLock;
+    }
+
+    private function getListImportToArray(): array
+    {
+        $listImport = [];
+
+        foreach ($this->listImport as $item) {
+            $key = hash("sha1", $item->getName() . $item->getDateCreated()->format($this->formatDateTime));
+            $listImport[$key]["id"] = $item->getId();
+            $listImport[$key]["name"] = $item->getName();
+            $listImport[$key]["dateCreated"] = $item->getDateCreated()->format($this->formatDateTime);
+        }
+
+        return $listImport;
     }
 
     /**
@@ -82,10 +108,6 @@ class FileLock extends FileConfig
     private function getListRepositoryToArray(): array
     {
         $listRepository = [];
-
-        // TODO Debug Mode
-        //var_dump($this->listRepository);
-        //exit();
 
         foreach ($this->listRepository as $key => $item) {
             $listRepository[$key]["idStudent"] = $key;
@@ -99,7 +121,7 @@ class FileLock extends FileConfig
 
     public function putFileLock(): void
     {
-        file_put_contents($this->fileLock, json_encode($this->encodeFileLock()));
+        file_put_contents($this->fileLock, json_encode($this->encodeFileLock(), JSON_PRETTY_PRINT));
     }
 
     /**
