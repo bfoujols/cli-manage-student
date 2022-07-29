@@ -5,9 +5,6 @@ namespace ManageStudent\Service\Config;
 use DateTime;
 use ManageStudent\Entity\Import;
 use ManageStudent\Entity\Repository;
-use ManageStudent\Entity\Student;
-use ManageStudent\Service\Date;
-use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Filesystem\Filesystem;
 
 class FileLock extends FileConfig
@@ -56,6 +53,7 @@ class FileLock extends FileConfig
     }
 
     /**
+     * @param string $idStudent by NomanclatureService::getHashForId()
      * @param string $nameRepository
      * @return $this
      */
@@ -66,6 +64,10 @@ class FileLock extends FileConfig
         return $this;
     }
 
+    /**
+     * @param string $nameImport
+     * @return $this
+     */
     public function setImport(string $nameImport): FileLock
     {
         // TODO Change le hash
@@ -110,7 +112,6 @@ class FileLock extends FileConfig
         $listRepository = [];
 
         foreach ($this->listRepository as $key => $item) {
-            $listRepository[$key]["idStudent"] = $key;
             $listRepository[$key]["id"] = $item->getId();
             $listRepository[$key]["name"] = $item->getName();
             $listRepository[$key]["dateCreated"] = $item->getDateCreated()->format($this->formatDateTime);

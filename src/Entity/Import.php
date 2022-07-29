@@ -2,6 +2,8 @@
 
 namespace ManageStudent\Entity;
 
+use phpDocumentor\Reflection\Types\Boolean;
+
 class Import
 {
     private string $id;
@@ -9,11 +11,11 @@ class Import
     private \DateTime $dateCreated;
 
     /**
-     * @return string
+     * @return string|false
      */
-    public function getId(): string
+    public function getId()
     {
-        return $this->id;
+        return ($this->id === "") ? false : $this->id;
     }
 
     /**
@@ -27,11 +29,11 @@ class Import
     }
 
     /**
-     * @return string
+     * @return string|false
      */
-    public function getName(): string
+    public function getName()
     {
-        return $this->name;
+        return ($this->name === "") ? false : $this->name;
     }
 
     /**

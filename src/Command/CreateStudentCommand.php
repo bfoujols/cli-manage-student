@@ -52,9 +52,10 @@ class CreateStudentCommand extends CommandManage
                 $nameDir = new NomanclatureService();
                 $newDir = new Dir();
                 $nameRepository = $nameDir->getNameWithoutType($student);
-                $idStuden = $nameDir->getHashForId($student, true);
+                $idStudent = $nameDir->getHashForId($student, true);
+
                 if ($newDir->createDir($nameRepository) === true) {
-                    $fileLock->setRepository($idStuden, $nameRepository);
+                    $fileLock->setRepository($idStudent, $nameRepository);
                     $result = "Creation du repertoire ";
                 } else {
                     $result = "Repertoire deja existant ";
