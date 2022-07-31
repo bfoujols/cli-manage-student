@@ -2,6 +2,7 @@
 
 namespace ManageStudent\Entity;
 
+use ManageStudent\Exception\InvalideArgumentException;
 use phpDocumentor\Reflection\Types\Boolean;
 
 class Import
@@ -11,19 +12,24 @@ class Import
     private \DateTime $dateCreated;
 
     /**
-     * @return string|false
+     * @return string
      */
-    public function getId()
+    public function getId(): string
     {
-        return ($this->id === "") ? false : $this->id;
+        return $this->id;
     }
 
     /**
      * @param string $id
      * @return Import
+     * @throws InvalideArgumentException
      */
     public function setId(string $id): Import
     {
+
+        if ($id === "" || strlen($id) !== 40) {
+            throw new InvalideArgumentException("le format de l'ID est incorrect (Import::setId)");
+        }
         $this->id = $id;
         return $this;
     }
@@ -31,17 +37,21 @@ class Import
     /**
      * @return string|false
      */
-    public function getName()
+    public function getName(): string
     {
-        return ($this->name === "") ? false : $this->name;
+        return $this->name;
     }
 
     /**
      * @param string $name
      * @return Import
+     * @throws InvalideArgumentException
      */
     public function setName(string $name): Import
     {
+        if ($name === "") {
+            throw new InvalideArgumentException("le format du nom est incorrect (Import::setName)");
+        }
         $this->name = $name;
         return $this;
     }
