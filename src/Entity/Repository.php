@@ -2,6 +2,8 @@
 
 namespace ManageStudent\Entity;
 
+use ManageStudent\Exception\InvalideArgumentException;
+
 class Repository
 {
     private string $id;
@@ -40,6 +42,9 @@ class Repository
      */
     public function setName(string $name): Repository
     {
+        if ($name === "") {
+            throw new InvalideArgumentException("le format du nom est incorrect (Repository::setName)");
+        }
         $this->name = $name;
         return $this;
     }
