@@ -4,6 +4,7 @@ namespace Command;
 
 use ManageStudent\Command\CreateStudentCommand;
 use ManageStudent\Service\Command\CommandBanner;
+use ManageStudent\Service\Config\FileLock;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -26,6 +27,7 @@ final class CommandStudentDirDefaultTest extends TestCase
     protected function tearDown(): void
     {
         $this->commandeTester = null;
+        (new Filesystem())->remove("mstud.lock");
     }
 
     /**
