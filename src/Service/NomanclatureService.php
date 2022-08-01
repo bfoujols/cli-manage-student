@@ -29,6 +29,24 @@ class NomanclatureService
     }
 
     /**
+     * Création de ID HASH de l'étudiant
+     *
+     * @param Student $student
+     * @return string
+     */
+    public function getHashForId(Student $student, bool $hash = false): string
+    {
+        $clean = new StandardRaw();
+        $key = $clean->normalizeSRString($student->getNom(), true)
+            . "-" .
+            $clean->normalizeSRString($student->getPrenom(), true)
+            . "-" .
+            $this->getDateToString($student->getDateNaissance());
+
+        return ($hash === true) ? hash("sha1", $key) : $key;
+    }
+
+    /**
      * Format des la date dans la nomenclature
      *
      * @param \DateTime $dateTime

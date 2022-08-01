@@ -4,6 +4,7 @@ namespace ManageStudent\Command;
 
 use ManageStudent\Entity\Student;
 use ManageStudent\Service\Command\CommandBanner;
+use ManageStudent\Service\Config\FileLock;
 use ManageStudent\Service\FileSystem\Dir;
 use ManageStudent\Service\FileSystem\FileLoader;
 use ManageStudent\Service\FileSystem\FileSelector;
@@ -43,14 +44,28 @@ class CreateStudentCommand extends CommandManage
             FileSource::getFilePath()
         ]);
 
+        $fileLock = (new FileLock())->createFileLock();
+        $fileLock->setImport(FileSource::getFilePath());
+
         foreach (FileLoader::execute() as $student) {
             if ($student instanceof Student) {
                 $nameDir = new NomanclatureService();
                 $newDir = new Dir();
-                ($newDir->createDir($nameDir->getNameWithoutType($student)) === true) ? $result = "Creation du repertoire " : $result = "Repertoire deja existant ";
+                $nameRepository = $nameDir->getNameWithoutType($student);
+                $idStudent = $nameDir->getHashForId($student, true);
+
+                if ($newDir->createDir($nameRepository) === true) {
+                    $fileLock->setRepository($idStudent, $nameRepository);
+                    $result = "Creation du repertoire ";
+                } else {
+                    $result = "Repertoire deja existant ";
+                }
+
                 self::$stdOutput->writeln($result . $nameDir->getNameWithoutType($student));
             }
         }
+
+        $fileLock->putFileLock();
 
         return Command::SUCCESS;
     }

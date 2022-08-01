@@ -1,34 +1,34 @@
 {
-    "name": "bfoujols/mstud",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "ManageStudent\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Benoit Foujols",
-            "email": "Benoit.Foujols@ac-creteil.fr"
-        }
-    ],
-    "require": {
-        "php": ">=7.4",
-        "symfony/console": "^5.4",
-        "symfony/filesystem": "^5.4",
-        "symfony/finder": "^5.4",
-        "shuchkin/simplexlsx": "^1.0",
-        "ext-json": "*"
-    },
-    "require-dev": {
-        "roave/security-advisories": "dev-latest",
-        "phpunit/phpunit": "^9",
-        "symfony/test-pack": "^1.0"
-    },
-    "scripts": {
-        "test": "php vendor/bin/phpunit --testdox tests"
-    },
-    "bin": [
-        "bin/mstud"
-    ]
+  "name": "bfoujols/mstud",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "ManageStudent\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Benoit Foujols",
+      "email": "Benoit.Foujols@ac-creteil.fr"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "symfony/console": "^5.4",
+    "symfony/filesystem": "^5.4",
+    "symfony/finder": "^5.4",
+    "shuchkin/simplexlsx": "^1.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "^9",
+    "symfony/test-pack": "^1.0"
+  },
+  "scripts": {
+    "test": "php vendor/bin/phpunit --testdox tests"
+  },
+  "bin": [
+    "bin/mstud"
+  ]
 }
