@@ -4,6 +4,7 @@ namespace Entity;
 
 use DateTime;
 use DateTimeZone;
+use http\Exception;
 use ManageStudent\Entity\Import;
 use ManageStudent\Exception\InvalideArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -101,7 +102,7 @@ class ImportTest extends TestCase
     public function testImport07SetDateIsNotValideMois(): void
     {
         $import = new Import();
-        $this->expectExceptionMessage("DateTime::__construct(): Failed to parse time string (2022/13/30) at position 4 (/): Unexpected character");
+        $this->expectException(\Exception::class);
         $import->setDateCreated(new DateTime("2022/13/30", new DateTimeZone('Europe/Paris')));
     }
 
@@ -113,7 +114,7 @@ class ImportTest extends TestCase
     public function testImport08SetDateIsNotValideAnnee(): void
     {
         $import = new Import();
-        $this->expectExceptionMessage("DateTime::__construct(): Failed to parse time string (22/11/30) at position 0 (2): Unexpected character");
+        $this->expectException(\Exception::class);
         $import->setDateCreated(new DateTime("22/11/30", new DateTimeZone('Europe/Paris')));
     }
 }
