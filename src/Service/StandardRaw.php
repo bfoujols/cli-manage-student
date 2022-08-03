@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ManageStudent\Service;
+namespace Studoo\Service;
 
 /**
  * Class StandardRaw

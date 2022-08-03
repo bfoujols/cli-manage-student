@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ManageStudent\Service\Command;
+namespace Studoo\Service\Command;
 
 use DateTime;
 use DateTimeZone;

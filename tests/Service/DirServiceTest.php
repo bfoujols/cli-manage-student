@@ -2,7 +2,7 @@
 
 namespace Service;
 
-use ManageStudent\Service\FileSystem\Dir;
+use Studoo\Service\FileSystem\Dir;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 

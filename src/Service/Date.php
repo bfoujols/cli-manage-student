@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service;
+namespace Studoo\Service;
 
 use DateTime;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace ManageStudent\Service\FileSystem;
+namespace Studoo\Service\FileSystem;
 
-use ManageStudent\Service\chemin;
-use ManageStudent\Service\Command\QuestionType;
+use Studoo\Service\chemin;
+use Studoo\Service\Command\QuestionType;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\SplFileInfo;

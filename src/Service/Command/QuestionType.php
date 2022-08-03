@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service\Command;
+namespace Studoo\Service\Command;
 
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;

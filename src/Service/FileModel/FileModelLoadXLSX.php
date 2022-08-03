@@ -1,15 +1,15 @@
 <?php
 
-namespace ManageStudent\Service\FileModel;
+namespace Studoo\Service\FileModel;
 
 class FileModelLoadXLSX implements FileModelLoadInterface
 {
     public function getListFileModel(): array
     {
         return [
-            \ManageStudent\Service\FileModel\FileModelXLSXFileDefault::class,
-            \ManageStudent\Service\FileModel\FileModelXLSXFileEcoleDirecte::class,
-            \ManageStudent\Service\FileModel\FileModelXLSXFileAcademique::class
+            \Studoo\Service\FileModel\FileModelXLSXFileDefault::class,
+            \Studoo\Service\FileModel\FileModelXLSXFileEcoleDirecte::class,
+            \Studoo\Service\FileModel\FileModelXLSXFileAcademique::class
         ];
     }
 }

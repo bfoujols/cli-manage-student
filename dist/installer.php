@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Installer;
+namespace Studoo\Installer;
 
 // Check le minimun requis
 

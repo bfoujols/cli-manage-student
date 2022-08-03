@@ -1,9 +1,9 @@
 <?php
 
-namespace ManageStudent\Service\FileType;
+namespace Studoo\Service\FileType;
 
-use ManageStudent\Exception\NoTypeErrorException;
-use ManageStudent\Service\FileSystem\FileSource;
+use Studoo\Exception\NoTypeErrorException;
+use Studoo\Service\FileSystem\FileSource;
 use Shuchkin\SimpleXLSX;
 
 /**

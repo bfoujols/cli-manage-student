@@ -1,8 +1,8 @@
 <?php
 
-namespace ManageStudent\Service\FileSystem;
+namespace Studoo\Service\FileSystem;
 
-use ManageStudent\Command\CommandManage;
+use Studoo\Command\CommandManage;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 

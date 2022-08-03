@@ -1,9 +1,9 @@
 {
-    "name": "bfoujols/mstud",
+    "name": "bfoujols/studoo",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "ManageStudent\\": "src/"
+            "Studoo\\": "src/"
         }
     },
     "authors": [

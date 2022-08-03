@@ -1,11 +1,11 @@
 <?php
 
-namespace ManageStudent\Service\FileModel;
+namespace Studoo\Service\FileModel;
 
-use ManageStudent\Command\CommandManage;
-use ManageStudent\Entity\Student;
-use ManageStudent\Exception\DateInvalideErrorException;
-use ManageStudent\Service\Date;
+use Studoo\Command\CommandManage;
+use Studoo\Entity\Student;
+use Studoo\Exception\DateInvalideErrorException;
+use Studoo\Service\Date;
 
 class FileModelXLSXFileDefault extends FileModel implements FileModelInterface
 {

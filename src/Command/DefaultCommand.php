@@ -1,10 +1,10 @@
 <?php
 
-namespace ManageStudent\Command;
+namespace Studoo\Command;
 
-use ManageStudent\Service\CkeckStack;
-use ManageStudent\Service\listCommand;
-use ManageStudent\Service\Command\CommandBanner;
+use Studoo\Service\CkeckStack;
+use Studoo\Service\listCommand;
+use Studoo\Service\Command\CommandBanner;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

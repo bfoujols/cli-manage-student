@@ -4,8 +4,8 @@ namespace Service;
 
 use DateTime;
 use DateTimeZone;
-use ManageStudent\Entity\Student;
-use ManageStudent\Service\NomanclatureService;
+use Studoo\Entity\Student;
+use Studoo\Service\NomanclatureService;
 use PHPUnit\Framework\TestCase;
 
 class NomanclatureServiceTest extends TestCase

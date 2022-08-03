@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service;
+namespace Studoo\Service;
 
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\OutputInterface;

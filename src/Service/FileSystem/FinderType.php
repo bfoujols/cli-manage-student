@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service\FileSystem;
+namespace Studoo\Service\FileSystem;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
