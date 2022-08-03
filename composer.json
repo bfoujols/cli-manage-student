@@ -29,6 +29,6 @@
         "test": "php vendor/bin/phpunit --testdox tests"
     },
     "bin": [
-        "bin/mstud"
+        "bin/studoo"
     ]
 }

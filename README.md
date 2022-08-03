@@ -1,12 +1,12 @@
-# Manage Student Cli
+# Studoo
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/df1ed0cf2b5a46e68a822e674ca8e671)](https://www.codacy.com/gh/bfoujols/manage-student-cli/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bfoujols/manage-student-cli&amp;utm_campaign=Badge_Grade)
-![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/codacy.yml/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/df1ed0cf2b5a46e68a822e674ca8e671)](https://www.codacy.com/gh/bfoujols/studoo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bfoujols/studoo&amp;utm_campaign=Badge_Grade)
+![CI](https://github.com/bfoujols/studoo/actions/workflows/codacy.yml/badge.svg)
 
 ![CI](https://img.shields.io/badge/php-7.4%20to%208.1-777bb3.svg?logo=php&logoColor=white&labelColor=555555)
-![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing.yml/badge.svg)
-![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing-php80.yml/badge.svg)
-![CI](https://github.com/bfoujols/manage-student-cli/actions/workflows/testing-php81.yml/badge.svg)
+![CI](https://github.com/bfoujols/studoo/actions/workflows/testing.yml/badge.svg)
+![CI](https://github.com/bfoujols/studoo/actions/workflows/testing-php80.yml/badge.svg)
+![CI](https://github.com/bfoujols/studoo/actions/workflows/testing-php81.yml/badge.svg)
 
 Création d'un invité de commande pour faciliter la gestion des étudiants.
 A partir de fichier source (XLS, CVS, JSON ...), on peut effectuer des taches comme la création des dossiers d'étudiant
@@ -16,7 +16,7 @@ ou d'autres fichiers template (comme la création des fiches d'examen)
 
 ### Last release
 
-[MANAGE STUDENT v0.5.0-alpha : Liste des releases](https://github.com/bfoujols/manage-student-cli/blob/main/CHANGELOG.md)
+[STUDOO v0.5.0-alpha : Liste des releases](https://github.com/bfoujols/studoo/blob/main/CHANGELOG.md)
 
 ### Liste des features
 
@@ -31,7 +31,7 @@ ou d'autres fichiers template (comme la création des fiches d'examen)
 Pour savoir la liste des commandes disponibles :
 
 ``` shell
-php mstud.phar list
+php studoo.phar list
 ```
 
 ## Installation
@@ -39,7 +39,7 @@ php mstud.phar list
 Pour installer la commande, ouvrez un terminal :
 
 ``` shell
-curl -fsS https://raw.githubusercontent.com/bfoujols/manage-student-cli/main/dist/installer.php | php
+curl -fsS https://raw.githubusercontent.com/bfoujols/studoo/main/dist/installer.php | php
 ```
 
 ### Prerequis
@@ -58,10 +58,10 @@ Je vous invite à participer au projet pour corriger, améliorer ce client CLI. 
 ci-dessous :
 
 ```shell
-$ git clone git@github.com:bfoujols/cli-manage-student.git
-$ cd cli-manage-student
+$ git clone git@github.com:bfoujols/studoo.git
+$ cd studoo
 $ composer install
-$ php bin/mstud 
+$ php bin/studoo
 ```
 
 ## Testing
@@ -80,22 +80,22 @@ Package du projet via une archive .phar via clue/phar-composer
 
 ``` shell
 $ curl -JOL https://clue.engineering/phar-composer-latest.phar
-$ git clone git@github.com:bfoujols/cli-manage-student.git
-$ cli-manage-student
+$ git clone git@github.com:bfoujols/studoo.git
+$ cd studoo
 $ composer install --no-dev
 $ cd ..
-$ php -d phar.readonly=off phar-composer.phar build cli-manage-student
-[1/1] Creating phar mstud.phar
-  - Adding main package "bfoujols/mstud"
+$ php -d phar.readonly=off phar-composer.phar build studoo
+[1/1] Creating phar studoo.phar
+  - Adding main package "bfoujols/studoo"
   - Adding composer base files
   [...]
-  - Setting main/stub
+  - Setting main/studoo
     Using referenced shebang "#!/usr/bin/env php"
     Using referenced chmod 0644
     Applying chmod 0644
-    OK - Creating mstud.phar (1091.6 KiB) completed after 0.1s
-$ php mstud.phar --version
-  Manage Student CLI <<version>>
+    OK - Creating studoo.phar (1091.6 KiB) completed after 0.1s
+$ php studoo.phar --version
+  Studoo <<version>>
 ```
 
 ### AUTEUR

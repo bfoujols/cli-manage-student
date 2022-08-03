@@ -18,7 +18,7 @@ class DefaultCommand extends CommandManage
     {
         self::$stdOutput->writeln([
             CommandBanner::getBanner(),
-            'Bienvenu dans la console Manage Student !',
+            'Bienvenu dans la console STUDOO !',
             ''
         ]);
 
@@ -29,7 +29,7 @@ class DefaultCommand extends CommandManage
         $check->render();
 
         self::$stdOutput->writeln([
-            'Si vous avez un problème, https://github.com/bfoujols/manage-student-cli/discussions',
+            'Si vous avez un problème, https://github.com/bfoujols/studoo/discussions',
             ''
         ]);
 

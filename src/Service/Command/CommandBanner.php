@@ -34,12 +34,20 @@ class CommandBanner
         self::$timeExecStart = $date;
         self::$timeExecStartMicro = microtime(true);
 
+        /*
+          ____  _             _
+         / ___|| |_ _   _  __| | ___   ___
+         \___ \| __| | | |/ _` |/ _ \ / _ \
+          ___) | |_| |_| | (_| | (_) | (_) |
+         |____/ \__|\__,_|\__,_|\___/ \___/
+         */
         $banner = "<info>";
-        $banner .= " __  __                           ___ _           _             \n";
-        $banner .= "|  \/  |__ _ _ _  __ _ __ _ ___  / __| |_ _  _ __| |            \n";
-        $banner .= "| |\/| / _` | ' \/ _` / _` / -_) \__ \  _| || / _` |            \n";
-        $banner .= "|_|  |_\__,_|_||_\__,_\__, \___| |___/\__|\_,_\__,_|            \n";
-        $banner .= "                      |___/ </info><comment>" . self::$version . "</comment>    \n";
+        $banner .= "  ____  _             _              \n";
+        $banner .= " / ___|| |_ _   _  __| | ___   ___   \n";
+        $banner .= " \___ \| __| | | |/ _` |/ _ \ / _ \  \n";
+        $banner .= "  ___) | |_| |_| | (_| | (_) | (_) | \n";
+        $banner .= " |____/ \__|\__,_|\__,_|\___/ \___/  \n";
+        $banner .= "                        </info><comment>" . self::$version . "</comment>    \n";
 
         return $banner;
     }
