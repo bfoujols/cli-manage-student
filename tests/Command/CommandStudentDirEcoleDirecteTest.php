@@ -26,7 +26,7 @@ final class CommandStudentDirEcoleDirecteTest extends TestCase
     protected function tearDown(): void
     {
         $this->commandeTester = null;
-        (new Filesystem())->remove("mstud.lock");
+        (new Filesystem())->remove("studoo.lock");
     }
 
     /**
