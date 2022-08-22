@@ -36,8 +36,7 @@ class CkeckStack
         $table = new Table($this->output);
         $table
             ->setHeaders(['CHECK', 'SERVICE', 'VERSION'])
-            ->setRows($this->run())
-        ;
+            ->setRows($this->run());
         $table->render();
         $this->symfonyStyle->writeln([
             '',

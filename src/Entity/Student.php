@@ -4,11 +4,30 @@ namespace Studoo\Entity;
 
 class Student extends \DateTime
 {
+    private string $id;
     private string $nom;
     private string $prenom;
     private \DateTime $dateNaissance;
     private string $statut;
     private string $numero;
+
+    /**
+     * @return string
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     * @return Student
+     */
+    public function setId(string $id): Student
+    {
+        $this->id = $id;
+        return $this;
+    }
 
     /**
      * @return string

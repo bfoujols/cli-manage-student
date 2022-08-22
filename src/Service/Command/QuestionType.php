@@ -48,5 +48,4 @@ class QuestionType extends QuestionHelper
     }
 
 
-
 }

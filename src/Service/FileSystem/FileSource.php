@@ -32,7 +32,7 @@ class FileSource
      */
     public static function getFileSource(): SplFileInfo
     {
-       return self::$SplFileInfo;
+        return self::$SplFileInfo;
     }
 
     /**
