@@ -8,7 +8,7 @@ class App extends Application
 {
     public function __construct()
     {
-        parent::__construct("Manage Student CLI", "0.5.0@alpha");
+        parent::__construct("Studoo", "0.6.0@alpha");
 
         $this->add(new \Studoo\Command\DefaultCommand());
         $this->add(new \Studoo\Command\CreateStudentCommand());
