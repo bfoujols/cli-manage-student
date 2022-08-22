@@ -30,7 +30,7 @@ class Installer
         $setup = array(
             "executable" => "studoo",
             "rootDir" => ".studoo",
-            "manifest" => "https://raw.githubusercontent.com/bfoujols/studoo/main/dist/manifest.json",
+            "manifest" => "https://dist.studoo.app/manifest.json",
             "nameCommand" => "Studoo"
         );
 
