@@ -2,7 +2,7 @@
 
 namespace Service\Config;
 
-use ManageStudent\Service\Config\FileLock;
+use Studoo\Service\Config\FileLock;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 

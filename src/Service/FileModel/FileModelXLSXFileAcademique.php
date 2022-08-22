@@ -2,12 +2,10 @@
 
 namespace Studoo\Service\FileModel;
 
-use DateTime;
 use Studoo\Command\CommandManage;
 use Studoo\Entity\Student;
 use Studoo\Exception\DateInvalideErrorException;
 use Studoo\Service\Date;
-use Studoo\Service\StandardRaw;
 
 class FileModelXLSXFileAcademique extends FileModel implements FileModelInterface
 {

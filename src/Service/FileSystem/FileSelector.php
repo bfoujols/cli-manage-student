@@ -2,7 +2,6 @@
 
 namespace Studoo\Service\FileSystem;
 
-use Studoo\Service\chemin;
 use Studoo\Service\Command\QuestionType;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

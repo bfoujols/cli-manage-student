@@ -2,7 +2,6 @@
 
 namespace Service;
 
-use Studoo\Service\StandardRaw;
 use PHPUnit\Framework\TestCase;
 
 final class StandardRawTest extends TestCase

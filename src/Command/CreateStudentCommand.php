@@ -9,6 +9,7 @@ use Studoo\Service\FileSystem\FileLoader;
 use Studoo\Service\FileSystem\FileSelector;
 use Studoo\Service\FileSystem\FileSource;
 use Studoo\Service\NomanclatureService;
+use Studoo\Service\Config\FileLock;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

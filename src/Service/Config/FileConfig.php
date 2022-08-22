@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service\Config;
+namespace Studoo\Service\Config;
 
 class FileConfig
 {
