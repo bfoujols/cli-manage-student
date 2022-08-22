@@ -1,9 +1,9 @@
 <?php
 
-namespace ManageStudent\Service\FileSystem;
+namespace Studoo\Service\FileSystem;
 
-use ManageStudent\Command\CommandManage;
-use ManageStudent\Exception\NoTypeErrorException;
+use Studoo\Command\CommandManage;
+use Studoo\Exception\NoTypeErrorException;
 
 /**
  * Class FileLoader
@@ -22,10 +22,10 @@ class FileLoader
     public static function execute(): array
     {
         try {
-            $FileTypeLoader = 'ManageStudent\Service\FileType\FileType' . FileSource::getFileExtension();
+            $FileTypeLoader = 'Studoo\Service\FileType\FileType' . FileSource::getFileExtension();
             $exeFileType = new $FileTypeLoader();
 
-            $FileModelLoader = 'ManageStudent\Service\FileModel\FileModelLoad' . FileSource::getFileExtension();
+            $FileModelLoader = 'Studoo\Service\FileModel\FileModelLoad' . FileSource::getFileExtension();
             $exeFileModel = new $FileModelLoader();
             foreach ($exeFileModel->getListFileModel() as $FileModel) {
                 $ModelClass = new $FileModel;

@@ -4,7 +4,7 @@ namespace Entity;
 
 use DateTime;
 use DateTimeZone;
-use ManageStudent\Entity\Repository;
+use Studoo\Entity\Repository;
 use PHPUnit\Framework\TestCase;
 
 class RepositoryTest extends TestCase

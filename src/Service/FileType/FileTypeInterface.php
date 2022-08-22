@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service\FileType;
+namespace Studoo\Service\FileType;
 
 /**
  * Class FileTypeInterface

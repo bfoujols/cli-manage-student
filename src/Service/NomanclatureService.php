@@ -1,8 +1,8 @@
 <?php
 
-namespace ManageStudent\Service;
+namespace Studoo\Service;
 
-use ManageStudent\Entity\Student;
+use Studoo\Entity\Student;
 
 /**
  * Class NomanclatureService

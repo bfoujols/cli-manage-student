@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Exception;
+namespace Studoo\Exception;
 
 class NoTypeErrorException extends \Exception
 {

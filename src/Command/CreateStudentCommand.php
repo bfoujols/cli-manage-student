@@ -1,15 +1,15 @@
 <?php
 
-namespace ManageStudent\Command;
+namespace Studoo\Command;
 
-use ManageStudent\Entity\Student;
-use ManageStudent\Service\Command\CommandBanner;
-use ManageStudent\Service\Config\FileLock;
-use ManageStudent\Service\FileSystem\Dir;
-use ManageStudent\Service\FileSystem\FileLoader;
-use ManageStudent\Service\FileSystem\FileSelector;
-use ManageStudent\Service\FileSystem\FileSource;
-use ManageStudent\Service\NomanclatureService;
+use Studoo\Entity\Student;
+use Studoo\Service\Command\CommandBanner;
+use Studoo\Service\FileSystem\Dir;
+use Studoo\Service\FileSystem\FileLoader;
+use Studoo\Service\FileSystem\FileSelector;
+use Studoo\Service\FileSystem\FileSource;
+use Studoo\Service\NomanclatureService;
+use Studoo\Service\Config\FileLock;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

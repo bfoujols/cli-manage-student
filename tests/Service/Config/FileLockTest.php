@@ -2,7 +2,7 @@
 
 namespace Service\Config;
 
-use ManageStudent\Service\Config\FileLock;
+use Studoo\Service\Config\FileLock;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -11,7 +11,7 @@ class FileLockTest extends TestCase
 
     protected function tearDown(): void
     {
-        (new Filesystem())->remove("mstud.lock");
+        (new Filesystem())->remove("studoo.lock");
     }
 
     /**
@@ -23,7 +23,7 @@ class FileLockTest extends TestCase
         $fileLockCreated->createFileLock();
         $fileLockCreated->putFileLock();
 
-        $this->assertFileExists("mstud.lock");
+        $this->assertFileExists("studoo.lock");
     }
 
     public function testFileLockImportFileIsObject(): void

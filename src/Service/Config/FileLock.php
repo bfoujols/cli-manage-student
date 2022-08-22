@@ -1,10 +1,10 @@
 <?php
 
-namespace ManageStudent\Service\Config;
+namespace Studoo\Service\Config;
 
 use DateTime;
-use ManageStudent\Entity\Import;
-use ManageStudent\Entity\Repository;
+use Studoo\Entity\Import;
+use Studoo\Entity\Repository;
 use Symfony\Component\Filesystem\Filesystem;
 
 class FileLock extends FileConfig

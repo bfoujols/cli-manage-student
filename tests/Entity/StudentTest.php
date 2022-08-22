@@ -4,7 +4,6 @@ namespace Entity;
 
 use DateTime;
 use DateTimeZone;
-use ManageStudent\Entity\Student;
 use PHPUnit\Framework\TestCase;
 
 final class StudentTest extends TestCase
@@ -15,7 +14,7 @@ final class StudentTest extends TestCase
      */
     public function testStud01NomWithoutSpace(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $student->setNom("Bonneau");
 
         $this->assertEquals(
@@ -30,7 +29,7 @@ final class StudentTest extends TestCase
      */
     public function testStud02NomWithSpace(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $student->setNom("Bonneau Paul");
 
         $this->assertEquals(
@@ -45,7 +44,7 @@ final class StudentTest extends TestCase
      */
     public function testStud03PrenomWithoutSpace(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $student->setPrenom("Anne");
 
         $this->assertEquals(
@@ -60,7 +59,7 @@ final class StudentTest extends TestCase
      */
     public function testStud04PrenomWithSpace(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $student->setPrenom("Anne Marie");
 
         $this->assertEquals(
@@ -75,7 +74,7 @@ final class StudentTest extends TestCase
      */
     public function testStud05DateNaissanceToFormatEurope(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $dateNow = new DateTime("2022/12/30", new DateTimeZone('Europe/Paris'));
         $student->setDateNaissance($dateNow);
 
@@ -91,7 +90,7 @@ final class StudentTest extends TestCase
      */
     public function testStud06DateNaissance(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $dateNow = new DateTime("2022/12/30");
         $student->setDateNaissance($dateNow);
 
@@ -107,7 +106,7 @@ final class StudentTest extends TestCase
      */
     public function testStud07Statut(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $student->setStatut("INITIAL");
 
         $this->assertSame(
@@ -122,7 +121,7 @@ final class StudentTest extends TestCase
      */
     public function testStud08Numero(): void
     {
-        $student = new Student();
+        $student = new \Studoo\Entity\Student();
         $student->setNumero("034543245543");
 
         $this->assertSame(

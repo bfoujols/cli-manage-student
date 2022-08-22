@@ -1,14 +1,13 @@
 <?php
 
-namespace ManageStudent\Command;
+namespace Studoo\Command;
 
-use ManageStudent\Service\CkeckStack;
-use ManageStudent\Service\listCommand;
-use ManageStudent\Service\Command\CommandBanner;
+use Studoo\Service\CkeckStack;
+use Studoo\Service\listCommand;
+use Studoo\Service\Command\CommandBanner;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
 class DefaultCommand extends CommandManage
 {
@@ -18,7 +17,7 @@ class DefaultCommand extends CommandManage
     {
         self::$stdOutput->writeln([
             CommandBanner::getBanner(),
-            'Bienvenu dans la console Manage Student !',
+            'Bienvenu dans la console STUDOO !',
             ''
         ]);
 
@@ -29,7 +28,7 @@ class DefaultCommand extends CommandManage
         $check->render();
 
         self::$stdOutput->writeln([
-            'Si vous avez un problème, https://github.com/bfoujols/manage-student-cli/discussions',
+            'Si vous avez un problème, https://github.com/bfoujols/studoo/discussions',
             ''
         ]);
 

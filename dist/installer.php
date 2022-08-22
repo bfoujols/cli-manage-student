@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Installer;
+namespace Studoo\Installer;
 
 // Check le minimun requis
 
@@ -28,10 +28,10 @@ class Installer
     public function __construct()
     {
         $setup = array(
-            "executable" => "mstud",
-            "rootDir" => ".mstud",
-            "manifest" => "https://raw.githubusercontent.com/bfoujols/manage-student-cli/main/dist/manifest.json",
-            "nameCommand" => "Manage Stud CLI"
+            "executable" => "studoo",
+            "rootDir" => ".studoo",
+            "manifest" => "https://dist.studoo.app/manifest.json",
+            "nameCommand" => "Studoo"
         );
 
         foreach ($setup as $key => $value) {
@@ -128,9 +128,9 @@ class Installer
 
         $this->output(PHP_EOL . "Action à faire", 'heading');
         $this->output("  Mettre dans votre fichier configuration shell, la ligne suivante :", 'heading', false);
-        $this->output('  export PATH=$HOME/.mstud/bin:$PATH' . PHP_EOL, 'heading', false);
+        $this->output('  export PATH=$HOME/.studoo/bin:$PATH' . PHP_EOL, 'heading', false);
         $this->output("  Après l'installation de cette ligne, vous pouvez ouvrir une autre session de terminal" . PHP_EOL, 'heading', false);
-        $this->output("  La commande mstud est disponible :)" . PHP_EOL, 'heading', false);
+        $this->output("  La commande studoo est disponible :)" . PHP_EOL, 'heading', false);
 
         $this->output("  Si vous avez un problème, https://github.com/bfoujols/manage-student-cli/discussions" . PHP_EOL . PHP_EOL, 'heading', false);
     }

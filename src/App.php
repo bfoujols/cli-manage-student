@@ -1,18 +1,18 @@
 <?php
-namespace ManageStudent;
+namespace Studoo;
 
-use ManageStudent\Service\Command\CommandBanner;
+use Studoo\Service\Command\CommandBanner;
 use Symfony\Component\Console\Application;
 
 class App extends Application
 {
     public function __construct()
     {
-        parent::__construct("Manage Student CLI", "0.5.0@alpha");
+        parent::__construct("Studoo", "0.6.0@alpha");
 
-        $this->add(new \ManageStudent\Command\DefaultCommand());
-        $this->add(new \ManageStudent\Command\CreateStudentCommand());
-        $this->add(new \ManageStudent\Command\CreateFileDefaultCommand());
+        $this->add(new \Studoo\Command\DefaultCommand());
+        $this->add(new \Studoo\Command\CreateStudentCommand());
+        $this->add(new \Studoo\Command\CreateFileDefaultCommand());
 
         CommandBanner::setVersion($this->getVersion());
 

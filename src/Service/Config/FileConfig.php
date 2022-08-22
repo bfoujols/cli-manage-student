@@ -1,10 +1,10 @@
 <?php
 
-namespace ManageStudent\Service\Config;
+namespace Studoo\Service\Config;
 
 class FileConfig
 {
-    private string $fileName = "mstud";
+    private string $fileName = "studoo";
     private string $extConfig = ".json";
     private string $extLock = ".lock";
     protected string $fileLock;

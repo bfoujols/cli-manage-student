@@ -1,8 +1,8 @@
 <?php
 
-namespace ManageStudent\Entity;
+namespace Studoo\Entity;
 
-use ManageStudent\Exception\InvalideArgumentException;
+use Studoo\Exception\InvalideArgumentException;
 
 class Repository
 {

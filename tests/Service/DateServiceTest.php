@@ -2,7 +2,7 @@
 
 namespace Service;
 
-use ManageStudent\Service\Date;
+use Studoo\Service\Date;
 use PHPUnit\Framework\TestCase;
 
 final class DateServiceTest extends TestCase

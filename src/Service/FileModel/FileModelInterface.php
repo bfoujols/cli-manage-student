@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Service\FileModel;
+namespace Studoo\Service\FileModel;
 
 interface FileModelInterface
 {

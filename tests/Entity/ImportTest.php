@@ -4,9 +4,8 @@ namespace Entity;
 
 use DateTime;
 use DateTimeZone;
-use http\Exception;
-use ManageStudent\Entity\Import;
-use ManageStudent\Exception\InvalideArgumentException;
+use Studoo\Entity\Import;
+use Studoo\Exception\InvalideArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class ImportTest extends TestCase

@@ -1,6 +1,6 @@
 <?php
 
-namespace ManageStudent\Entity;
+namespace Studoo\Entity;
 
 class Student extends \DateTime
 {

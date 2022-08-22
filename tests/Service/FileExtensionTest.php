@@ -12,7 +12,7 @@ final class FileExtensionTest extends TestCase
     public function testFileExt01IsArray(): void
     {
         $this->assertIsArray(
-            \ManageStudent\Service\FileSystem\FileExtension::getListExtensionByName()
+            \Studoo\Service\FileSystem\FileExtension::getListExtensionByName()
         );
     }
 
@@ -21,7 +21,7 @@ final class FileExtensionTest extends TestCase
      */
     public function testFileExt02ArrayTypeXlsx(): void
     {
-        $listExtension = \ManageStudent\Service\FileSystem\FileExtension::getListExtensionByName();
+        $listExtension = \Studoo\Service\FileSystem\FileExtension::getListExtensionByName();
         $this->assertSame(
             '*.xlsx',
             $listExtension[0]

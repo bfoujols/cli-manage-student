@@ -1,9 +1,8 @@
 <?php
 
-namespace ManageStudent\Entity;
+namespace Studoo\Entity;
 
-use ManageStudent\Exception\InvalideArgumentException;
-use phpDocumentor\Reflection\Types\Boolean;
+use Studoo\Exception\InvalideArgumentException;
 
 class Import
 {

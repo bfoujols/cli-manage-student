@@ -2,7 +2,6 @@
 
 namespace Service;
 
-use ManageStudent\Service\StandardRaw;
 use PHPUnit\Framework\TestCase;
 
 final class StandardRawTest extends TestCase
@@ -16,7 +15,7 @@ final class StandardRawTest extends TestCase
         $raw = 'benjamin';
 
         $this->assertIsString(
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRString($raw)
+            (new \Studoo\Service\StandardRaw)->normalizeSRString($raw)
         );
     }
 
@@ -30,7 +29,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'BENJAMIN',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRString($raw)
+            (new \Studoo\Service\StandardRaw)->normalizeSRString($raw)
         );
     }
 
@@ -43,7 +42,7 @@ final class StandardRawTest extends TestCase
         $raw = 'benjamin';
 
         $this->assertIsString(
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRSUcfirst($raw)
+            (new \Studoo\Service\StandardRaw)->normalizeSRSUcfirst($raw)
         );
     }
 
@@ -57,7 +56,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Benjamin',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRSUcfirst($raw)
+            (new \Studoo\Service\StandardRaw)->normalizeSRSUcfirst($raw)
         );
     }
 
@@ -71,7 +70,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'aaaaaaAAAAAIIIIiiiieeeeEEEEooooooOOOOOuuuuUUUUcCnN------------',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw)
         );
     }
 
@@ -85,7 +84,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'aaaaaaAAAAAIIIIiiiieeeeEEEEooooooOOOOOuuuuUUUUcCnN            ',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, false, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, false, true)
         );
     }
 
@@ -99,7 +98,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Benoit',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, true)
         );
     }
 
@@ -113,7 +112,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Benoit',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, true)
         );
     }
 
@@ -127,7 +126,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Benoit',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, true)
         );
     }
 
@@ -141,7 +140,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Jean-Benoit',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, true)
         );
     }
 
@@ -155,7 +154,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Jean Benoit',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, true, true)
         );
     }
 
@@ -169,7 +168,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Jean-Benoit',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, true)
         );
     }
 
@@ -183,7 +182,7 @@ final class StandardRawTest extends TestCase
 
         $this->assertSame(
             'Jean Benoit',
-            (new \ManageStudent\Service\StandardRaw)->normalizeSRUtf8($raw, true, true)
+            (new \Studoo\Service\StandardRaw)->normalizeSRUtf8($raw, true, true)
         );
     }
 }
