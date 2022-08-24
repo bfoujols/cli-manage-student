@@ -132,7 +132,7 @@ class Installer
         $this->output("  Après l'installation de cette ligne, vous pouvez ouvrir une autre session de terminal" . PHP_EOL, 'heading', false);
         $this->output("  La commande studoo est disponible :)" . PHP_EOL, 'heading', false);
 
-        $this->output("  Si vous avez un problème, https://github.com/bfoujols/manage-student-cli/discussions" . PHP_EOL . PHP_EOL, 'heading', false);
+        $this->output("  Si vous avez un problème, https://github.com/bfoujols/studoo/discussions" . PHP_EOL . PHP_EOL, 'heading', false);
     }
 
     /**
