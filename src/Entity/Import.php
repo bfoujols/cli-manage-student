@@ -1,9 +1,29 @@
 <?php
 
+/*
+ * Ce fichier fait partie du Studoo.
+ *
+ * (c) Benoit Foujols <Benoit.Foujols@ac-creteil.fr>
+ *
+ * Pour les informations complètes sur les droits d'auteur et la licence,
+ * veuillez consulter le fichier LICENSE qui a été distribué avec ce code source.
+ */
+
 namespace Studoo\Entity;
 
 use Studoo\Exception\InvalideArgumentException;
 
+/**
+ * Import est la classe qui permet d'identifier les fichiers imports
+ *
+ *
+ * Les méthodes SET peuvent être en chainage :
+ *
+ *     $import = (new Import())->setId('52565255434')->setName('exemple.cvs');
+ *
+ * @author Benoit Foujols <Benoit.Foujols@ac-creteil.fr>
+ *
+ */
 class Import
 {
     private string $id;
@@ -11,6 +31,8 @@ class Import
     private \DateTime $dateCreated;
 
     /**
+     * Retourne l'ID du fichier d'import
+     *
      * @return string
      */
     public function getId(): string
@@ -19,9 +41,13 @@ class Import
     }
 
     /**
-     * @param string $id
-     * @return Import
+     * Initialise ID du fichier d'import
+     *
+     * @param string $id ID du fichier d'import
+     *
      * @throws InvalideArgumentException
+     *
+     * @return $this
      */
     public function setId(string $id): Import
     {
@@ -34,7 +60,9 @@ class Import
     }
 
     /**
-     * @return string|false
+     * Retourne le nom du fichier d'import
+     *
+     * @return string
      */
     public function getName(): string
     {
@@ -42,8 +70,12 @@ class Import
     }
 
     /**
-     * @param string $name
-     * @return Import
+     * Initialise le nom du fichier d'import
+     *
+     * @param string $name le nom du fichier d'import
+     *
+     * @return $this
+     *
      * @throws InvalideArgumentException
      */
     public function setName(string $name): Import
@@ -56,6 +88,8 @@ class Import
     }
 
     /**
+     * Retourne la date du fichier d'import
+     *
      * @return \DateTime
      */
     public function getDateCreated(): \DateTime
@@ -64,7 +98,11 @@ class Import
     }
 
     /**
-     * @return Import
+     * Initialise la date du fichier d'import
+     *
+     * @param \DateTime $dateTime TimeStamp du fichier d'importation
+     *
+     * @return $this
      */
     public function setDateCreated(\DateTime $dateTime): Import
     {
