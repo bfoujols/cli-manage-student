@@ -1,8 +1,18 @@
 <?php
 
+/*
+ * Ce fichier fait partie du Studoo.
+ *
+ * (c) Benoit Foujols <Benoit.Foujols@ac-creteil.fr>
+ *
+ * Pour les informations complètes sur les droits d'auteur et la licence,
+ * veuillez consulter le fichier LICENSE qui a été distribué avec ce code source.
+ */
+
 namespace Studoo\Entity;
 
 use Studoo\Exception\InvalideArgumentException;
+
 
 class Repository
 {
@@ -11,7 +21,7 @@ class Repository
     private \DateTime $dateCreated;
 
     /**
-     * @return int
+     * @return string
      */
     public function getId(): string
     {

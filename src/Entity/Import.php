@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Ce fichier fait partie du Studoo.
  *
@@ -14,8 +13,7 @@ namespace Studoo\Entity;
 use Studoo\Exception\InvalideArgumentException;
 
 /**
- * Import est la classe qui permet d'identifier les fichiers imports
- *
+ * Import est la classe qui permet d'identifier les fichiers importations
  *
  * Les méthodes SET peuvent être en chainage :
  *
@@ -31,7 +29,7 @@ class Import
     private \DateTime $dateCreated;
 
     /**
-     * Retourne l'ID du fichier d'import
+     * Retourne l'ID du fichier d'importation
      *
      * @return string
      */
@@ -41,9 +39,9 @@ class Import
     }
 
     /**
-     * Initialise ID du fichier d'import
+     * Initialise ID du fichier d'importation
      *
-     * @param string $id ID du fichier d'import
+     * @param string $id ID du fichier d'importation
      *
      * @throws InvalideArgumentException
      *
@@ -60,7 +58,7 @@ class Import
     }
 
     /**
-     * Retourne le nom du fichier d'import
+     * Retourne le nom du fichier d'importation
      *
      * @return string
      */
@@ -70,9 +68,9 @@ class Import
     }
 
     /**
-     * Initialise le nom du fichier d'import
+     * Initialise le nom du fichier d'importation
      *
-     * @param string $name le nom du fichier d'import
+     * @param string $name le nom du fichier d'importation
      *
      * @return $this
      *
@@ -88,7 +86,7 @@ class Import
     }
 
     /**
-     * Retourne la date du fichier d'import
+     * Retourne la date du fichier d'importation
      *
      * @return \DateTime
      */
@@ -98,7 +96,7 @@ class Import
     }
 
     /**
-     * Initialise la date du fichier d'import
+     * Initialise la date du fichier d'importation
      *
      * @param \DateTime $dateTime TimeStamp du fichier d'importation
      *
