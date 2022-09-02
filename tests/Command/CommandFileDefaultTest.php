@@ -2,7 +2,7 @@
 
 namespace Command;
 
-use Studoo\Command\GestionStudent;
+use Studoo\Command\CreateFileDefaultCommand;
 use Studoo\Service\Command\CommandBanner;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
@@ -17,7 +17,7 @@ final class CommandFileDefaultTest extends TestCase
     {
         $application = new Application("Manage Student CLI", "0.2.0@alpha");
         CommandBanner::setVersion($application->getVersion());
-        $application->add(new GestionStudent());
+        $application->add(new CreateFileDefaultCommand());
         $command = $application->find("file:default");
         $this->commandeTester = new CommandTester($command);
     }

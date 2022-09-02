@@ -13,7 +13,6 @@ class App extends Application
         $this->add(new \Studoo\Command\DefaultCommand());
         $this->add(new \Studoo\Command\CreateStudentCommand());
         $this->add(new \Studoo\Command\CreateFileDefaultCommand());
-        $this->add(new \Studoo\Command\GestionStudent());
 
         CommandBanner::setVersion($this->getVersion());
 
