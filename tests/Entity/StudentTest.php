@@ -130,4 +130,19 @@ final class StudentTest extends TestCase
         );
     }
 
+    /**
+     * @return void
+     * CODE STUD09
+     */
+    public function testStud09Id(): void
+    {
+        $student = new \Studoo\Entity\Student();
+        $student->setId("2356542FT543546743F4325");
+
+        $this->assertSame(
+            "2356542FT543546743F4325",
+            $student->getId()
+        );
+    }
+
 }

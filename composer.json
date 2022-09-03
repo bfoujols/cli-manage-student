@@ -26,7 +26,7 @@
         "symfony/test-pack": "^1.0"
     },
     "scripts": {
-        "test": "php vendor/bin/phpunit --testdox tests"
+        "test": "php vendor/bin/phpunit --testdox tests --coverage-clover clover.xml"
     },
     "bin": [
         "bin/studoo"
