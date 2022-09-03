@@ -49,8 +49,3 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: results.sarif
-
-      - name: Code Coverage
-        run: |
-          export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_TOKEN }}
-          bash <(curl -Ls https://coverage.codacy.com/get.sh)
