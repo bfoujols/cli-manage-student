@@ -52,5 +52,5 @@ jobs:
 
       - name: Code Coverage
         run: |
-          export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }}
+          export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_TOKEN }}
           bash <(curl -Ls https://coverage.codacy.com/get.sh)
