@@ -32,11 +32,11 @@ final class CommandFileDefaultTest extends TestCase
      */
     public function testCommandeFileDefaultCreated(): void
     {
+        $this->commandeTester->setInputs(['0']);
         $this->commandeTester->execute([]);
-        $this->assertSame(
-            "ee5cda1ffec25948635f53ed8ca6e6e8fc5c37b1a5e99cea37cbf35a0c0284c2",
-            hash("sha256", $this->commandeTester->getDisplay())
-        );
+        $output = $this->commandeTester->getDisplay();
+
+        $this->assertStringContainsString('[*] Le fichier est créé liste-etudiant.xlsx', $output);
     }
 
     /**
@@ -44,11 +44,11 @@ final class CommandFileDefaultTest extends TestCase
      */
     public function testCommandeFileDefaultExist(): void
     {
+        $this->commandeTester->setInputs(['0']);
         $this->commandeTester->execute([]);
-        $this->assertSame(
-            "7cfcb3b700fd406b24ef39b7196e276e2881349996fbafc25d59ba203f84834e",
-            hash("sha256", $this->commandeTester->getDisplay())
-        );
+        $output = $this->commandeTester->getDisplay();
+
+        $this->assertStringContainsString('[X] Le fichier est deja present dans le repertoire', $output);
         // Purge du fichier tester
         (new Filesystem())->remove("liste-etudiant.xlsx");
     }
