@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1662411121">
-    <project timestamp="1662411121">
+<coverage generated="1662497005">
+    <project timestamp="1662497005">
         <file name="/Users/redbull/Projects/poc/cli-manage-student/src/App.php">
             <class name="Studoo\App" namespace="global">
                 <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0"
@@ -21,17 +21,17 @@
                 <metrics complexity="5" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0"
                          statements="7" coveredstatements="5" elements="9" coveredelements="6"/>
             </class>
-            <line num="14" type="method" name="initialize" visibility="protected" complexity="4" crap="4.59"
+            <line num="23" type="method" name="initialize" visibility="protected" complexity="4" crap="4.59"
                   count="11"/>
-            <line num="16" type="stmt" count="11"/>
-            <line num="19" type="stmt" count="11"/>
-            <line num="20" type="stmt" count="0"/>
-            <line num="21" type="stmt" count="11"/>
-            <line num="22" type="stmt" count="0"/>
             <line num="25" type="stmt" count="11"/>
-            <line num="28" type="method" name="getStdOutPut" visibility="public" complexity="1" crap="1" count="9"/>
-            <line num="30" type="stmt" count="9"/>
-            <metrics loc="33" ncloc="32" classes="1" methods="2" coveredmethods="1" conditionals="0"
+            <line num="28" type="stmt" count="11"/>
+            <line num="29" type="stmt" count="0"/>
+            <line num="30" type="stmt" count="11"/>
+            <line num="31" type="stmt" count="0"/>
+            <line num="34" type="stmt" count="11"/>
+            <line num="37" type="method" name="getStdOutPut" visibility="public" complexity="1" crap="1" count="9"/>
+            <line num="39" type="stmt" count="9"/>
+            <metrics loc="42" ncloc="33" classes="1" methods="2" coveredmethods="1" conditionals="0"
                      coveredconditionals="0" statements="7" coveredstatements="5" elements="9" coveredelements="6"/>
         </file>
         <file name="/Users/redbull/Projects/poc/cli-manage-student/src/Command/CreateFileDefaultCommand.php">
@@ -759,7 +759,7 @@
             <metrics loc="50" ncloc="39" classes="1" methods="2" coveredmethods="0" conditionals="0"
                      coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
         </file>
-        <metrics files="36" loc="1916" ncloc="1395" classes="28" methods="99" coveredmethods="70" conditionals="0"
+        <metrics files="36" loc="1925" ncloc="1396" classes="28" methods="99" coveredmethods="70" conditionals="0"
                  coveredconditionals="0" statements="367" coveredstatements="283" elements="466" coveredelements="353"/>
     </project>
 </coverage>
