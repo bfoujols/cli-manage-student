@@ -1,0 +1,45 @@
+name: Blackfire
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches:
+      - main
+      - develop
+  schedule:
+    - cron: '36 19 * * 0'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Blackfire via setup-php Action
+        uses: shivammathur/setup-php@v2
+        with:
+          # PHP Only: Setup PHP extensions, including Blackfire Probe.
+          # It is recommended to disable xdebug.
+          # Not needed for other languages.
+          extensions: blackfire, :xdebug
+          # Setup Blackfire Agent and CLI tool, and Blackfire Player
+          tools: blackfire, blackfire-player
+        env:
+          BLACKFIRE_SERVER_ID: ${{ secrets.BLACKFIRE_SERVER_ID }}
+          BLACKFIRE_SERVER_TOKEN: ${{ secrets.BLACKFIRE_SERVER_TOKEN }}
+          BLACKFIRE_CLIENT_ID: ${{ secrets.BLACKFIRE_CLIENT_ID }}
+          BLACKFIRE_CLIENT_TOKEN: ${{ secrets.BLACKFIRE_CLIENT_TOKEN }}
+
+      - name: Profile default command
+        env:
+          APP_ENV: prod
+          APP_DEBUG: 0
+        run: blackfire run php bin/studoo
