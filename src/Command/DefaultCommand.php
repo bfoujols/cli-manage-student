@@ -1,4 +1,12 @@
 <?php
+/*
+ * Ce fichier fait partie du projet Studoo.
+ *
+ * (c) Benoit Foujols <Benoit.Foujols@ac-creteil.fr>
+ *
+ * Pour les informations complètes sur les droits d'auteur et la licence,
+ * veuillez consulter le fichier LICENSE qui a été distribué avec ce code source.
+ */
 
 namespace Studoo\Command;
 
@@ -9,6 +17,14 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Commande par defaut qui affiche
+ * - la liste des commandes
+ * - information sur l'environnement
+ *
+ * Commande : studoo
+ *
+ */
 class DefaultCommand extends CommandManage
 {
     protected static $defaultName = 'default';
