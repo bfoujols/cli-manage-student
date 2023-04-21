@@ -17,7 +17,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CreateStudentCommand extends CommandManage
 {
-
     protected static $defaultName = 'student:dir';
     protected static $defaultDescription = 'Création des repertoires des étudiants';
 

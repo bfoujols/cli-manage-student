@@ -11,7 +11,6 @@ use Studoo\Service\StandardRaw;
 
 class FileModelXLSXFileEcoleDirecte extends FileModel implements FileModelInterface
 {
-
     public function analyse(array $structure): bool
     {
         $state = false;

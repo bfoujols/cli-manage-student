@@ -9,7 +9,6 @@ use Studoo\Service\Date;
 
 class FileModelXLSXFileAcademique extends FileModel implements FileModelInterface
 {
-
     public function analyse(array $structure): bool
     {
         $state = false;

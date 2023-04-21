@@ -86,7 +86,8 @@ class FileLock extends FileConfig
     {
         $this->listRepository[$idStudent] = (new Repository())
             ->setDateCreated(new \DateTime('now'))
-            ->setId($nameRepository
+            ->setId(
+                $nameRepository
             )->setName($nameRepository);
 
         return $this;

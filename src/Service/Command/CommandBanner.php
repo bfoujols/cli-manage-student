@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Studoo\Service\Command;
 
 use DateTime;

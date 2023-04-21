@@ -13,7 +13,6 @@ namespace Studoo\Entity;
 
 use Studoo\Exception\InvalideArgumentException;
 
-
 class Repository
 {
     private string $id;

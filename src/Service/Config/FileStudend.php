@@ -8,10 +8,8 @@
  * veuillez consulter le fichier LICENSE qui a été distribué avec ce code source.
  */
 
-
 namespace Studoo\Service\Config;
 
 class FileStudend extends FileConfig
 {
-
 }

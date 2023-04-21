@@ -28,7 +28,7 @@ class FileLoader
             $FileModelLoader = 'Studoo\Service\FileModel\FileModelLoad' . FileSource::getFileExtension();
             $exeFileModel = new $FileModelLoader();
             foreach ($exeFileModel->getListFileModel() as $FileModel) {
-                $ModelClass = new $FileModel;
+                $ModelClass = new $FileModel();
                 if ($ModelClass->analyse($exeFileType->getContent()) === true) {
                     self::$FileModelSelect = $ModelClass;
                     CommandManage::getStdOutPut()->writeln($ModelClass->getNameModel());

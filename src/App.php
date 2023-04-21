@@ -1,4 +1,5 @@
 <?php
+
 namespace Studoo;
 
 use Studoo\Service\Command\CommandBanner;
@@ -20,4 +21,3 @@ class App extends Application
         $this->setDefaultCommand('default');
     }
 }
-
