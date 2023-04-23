@@ -3,6 +3,7 @@
 
 ### App
 vendor/**
+composer.lock
 
 ### Testing
 tests/result/**
