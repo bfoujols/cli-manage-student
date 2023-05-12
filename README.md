@@ -1,5 +1,6 @@
 # Studoo
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/77568937cd3648acb7e8b716ac0c807f)](https://app.codacy.com/gh/studoo-app/studoo-cli?utm_source=github.com&utm_medium=referral&utm_content=studoo-app/studoo-cli&utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/df1ed0cf2b5a46e68a822e674ca8e671)](https://www.codacy.com/gh/bfoujols/studoo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bfoujols/studoo&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/df1ed0cf2b5a46e68a822e674ca8e671)](https://www.codacy.com/gh/bfoujols/studoo/dashboard?utm_source=github.com&utm_medium=referral&utm_content=bfoujols/studoo&utm_campaign=Badge_Coverage)![CI](https://github.com/bfoujols/studoo/actions/workflows/codacy.yml/badge.svg)
 
